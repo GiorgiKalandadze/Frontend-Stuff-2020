@@ -1,0 +1,32 @@
+.container {
+	display:flex;
+	justify-content: flex-start;
+	padding-left: 200px;
+	padding-top : 50px;
+	flex-wrap: wrap;
+	
+}
+
+.info {
+	background-color: #38d39f;
+	padding : 10px;
+	border: 2px solid black;
+	width: 15%;
+	text-align: center;
+	margin: 10px;
+	border-radius: 20%;
+	cursor: pointer;
+}
+img {
+	height: 150px;
+	border-radius: 50%;
+	width:100%;
+}
+
+h4 {
+	color : black;
+}
+
+.info:hover {
+	transform: scale(1.1);
+}
