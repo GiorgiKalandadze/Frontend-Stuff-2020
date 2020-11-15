@@ -1,0 +1,13 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #34495e;
+
+}
+
+.slide-show{
+	width: 700px;
+	height:400px;
+	overflow: hidden;
+	
+}
