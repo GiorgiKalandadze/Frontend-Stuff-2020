@@ -2,7 +2,7 @@
 #container {
 	background-color: #DFE7F0;
 	display: flex;
-  	flex-direction: horizontal;
+  	flex-direction: row;
   	justify-content: space-between;
   	padding: 1%;
 }
@@ -60,4 +60,20 @@ hr{
 .social:hover{
 	opacity: 0.6;
 	cursor: pointer;
+}
+
+
+
+/*Responsive*/
+@media screen and (max-width: 800px){
+	#container{
+		flex-direction: column;
+
+	}
+	#left-box{
+		width: 100%;
+	}
+	#right-box{
+		width: 100%;
+	}
 }
