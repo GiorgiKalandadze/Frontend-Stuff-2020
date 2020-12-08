@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groups</title>
+  
+  <link rel="stylesheet" type="text/css" href="../Style/groups.css">
+  <link rel="stylesheet" type="text/css" href="../Style/Header.css">
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <script type="text/javascript" src="../Script/groups.js"></script>
+
+</head>	
+
+<body>
+	<header class="navbar-container">
+		<h3 id="company-name">FarmVille</h3>
+		<div id="rightSide">
+			<nav>
+				<ul class="nav_links">
+					<li><a href="#">Main</a></li>
+					<li><a href="#">Companies</a></li>
+					<li><a href="#">Farmers</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Contact</a></li>
+
+				</ul>
+			</nav>
+			<a id="login" href="#"><button id="loginButton">Login</button></a>
+		</div>
+	</header>
+
+	<div class="cont">
+		<div class="left">
+			<div class="category">
+				<h3 id="categoryTitle">Categories</h3>
+				<label class="checkBoxLabel" for="checkBoxLabel">All: </label> 
+				<input type="checkbox" class="categoryCheckBox" id="categoryAll" 
+										onchange="displayAllGroups()" checked><br>
+				<label class="checkBoxLabel" for="checkBoxLabel">Birds: </label> 
+				<input type="checkbox" class="categoryCheckBox" id="categoryBirds" 
+										onchange="filterGroups()"><br>
+				
+				<label class="checkBoxLabel" for="checkBoxLabel">Animals: </label> 
+				<input type="checkbox" class="categoryCheckBox" id="categoryAnimals" 
+										onchange="filterGroups()"><br>
+
+				<label class="checkBoxLabel" for="checkBoxLabel">Fruit: </label> 
+				<input type="checkbox" class="categoryCheckBox" id="categoryFruit" 
+										onchange="filterGroups()"><br>	
+
+				<label class="checkBoxLabel" for="checkBoxLabel">Vegetable: </label> 
+				<input type="checkbox" class="categoryCheckBox" id="categoryVegetable" 
+										onchange="filterGroups()"><br>						
+			</div>
+		</div>
+		<div class="right">
+			<div class="group birds">
+				<img src="../Images/Group/birds1.png">
+				<h3 class="groupTitle">Birds</h3>
+				<p>
+					Donec suscipit vel sem sit amet lacinia. Vestibulum feugiat, orci sed condimentum placerat, mi lacus molestie elit, sed lacinia quam massa in eros.
+				</p>
+			</div>
+			<div class="group animals">
+				<img src="../Images/Group/animals2.jpg">
+				<h3 class="groupTitle">Animals</h3>
+				<p>
+					Phasellus ac ligula eu elit tincidunt congue. Mauris vitae orci porta, blandit massa eu, malesuada neque. Proin non condimentum nulla. Nulla interdum id lacus ut tempus. 
+				</p>
+			</div>
+			<div class="group fruit">
+				<img src="../Images/Group/fruit1.jpeg">
+				<h3 class="groupTitle">Fruit</h3>
+				<p>
+					Sed lacinia est et interdum efficitur. Curabitur eu consectetur libero, vitae maximus quam. Pellentesque ac eros eu urna tincidunt feugiat. 
+				</p>
+			</div>
+			<div class="group birds">
+				<img src="../Images/Group/birds2.jpg">
+				<h3 class="groupTitle">Birds</h3>
+				<p>
+					Sed non purus nec mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. Integer commodo nisl quis massa volutpat, aliquam cursus sapien tempor.
+				</p>
+			</div>
+			<div class="group vegetable">
+				<img src="../Images/Group/vegetable1.jpg">
+				<h3 class="groupTitle">Vegetable</h3>
+				<p>
+					Ut molestie sodales molestie. Praesent euismod turpis eu posuere elementum.Pellentesque ac eros eu urna tincidunt feugiat. 
+				</p>
+			</div>
+			<div class="group birds">
+				<img src="../Images/Group/birds3.jpeg">
+				<h3 class="groupTitle">Birds</h3>
+				<p>
+					Ut sodales ante eu tellus feugiat pulvinar. Nullam in velit felis. Phasellus blandit pretium lacus sit amet semper. Nulla eget mauris suscipit nisi volutpat facilisis.
+				</p>
+			</div>
+			<div class="group fruit">
+				<img src="../Images/Group/fruit2.jpg">
+				<h3 class="groupTitle">Fruit</h3>
+				<p>
+					Pellentesque ac eros eu urna tincidunt feugiat. Sed lacinia est et interdum efficitur. Curabitur eu consectetur libero, vitae maximus quam. 
+				</p>
+			</div>
+			<div class="group animals">
+				<img src="../Images/Group/animals1.jpg">
+				<h3 class="groupTitle">Animals</h3>
+				<p>
+					Nullam bibendum urna odio, at molestie purus mattis in. Donec pharetra consequat tellus, nec facilisis tellus consectetur nec. Ut molestie sodales molestie. Praesent euismod turpis eu posuere elementum.
+				</p>
+			</div>
+			<div class="group vegetable">
+				<img src="../Images/Group/vegetable2.jpeg">
+				<h3 class="groupTitle">Vegetable</h3>
+				<p>
+					Phasellus ac ligula eu elit tincidunt congue. Mauris vitae orci porta, blandit massa eu, malesuada neque. Proin non condimentum nulla.Pellentesque ac eros eu urna tincidunt feugiat. 
+				</p>
+			</div>
+		</div>
+		
+	</div>
+
+	
+</body>
+
+</html>

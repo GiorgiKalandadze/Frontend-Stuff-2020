@@ -4,40 +4,61 @@
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
   <title>List</title>
   <link rel="stylesheet" type="text/css" href="../Style/Main.css">
-
+	<link rel="stylesheet" type="text/css" href="../Style/Header.css">
   <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
 
 </head>	
 
 <body>
-	  <include src="./header.html"></include>
+	<header class="navbar-container">
+		<h3 id="company-name">FarmVille</h3>
+		<div id="rightSide">
+			<nav>
+				<ul class="nav_links">
+					<li><a href="#">Main</a></li>
+					<li><a href="#">Companies</a></li>
+					<li><a href="#">Farmers</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Contact</a></li>
 
-	<div class="slide-show">
-		<input type="radio" name="r" id="r1" checked>
-		<input type="radio" name="r" id="r2">
-		<input type="radio" name="r" id="r3">
-		<div class="slides">
-			<div class="slide">
-				<img src="../Images/veg.jpg">
+				</ul>
+			</nav>
+			<a id="login" href="#"><button id="loginButton">Login</button></a>
+		</div>
+	</header>
+
+	<div id="firstMainRow">
+		<div class="slideShow">
+			<div class="slides">
+				<div class="slide" id="slide1">
+					<img src="../Images/Main/slide1.jpg">
+				</div>
+				<div class="slide" id="slide2">
+					<img src="../Images/Main/slide2.jpg">
+				</div>
+				<div class="slide" id="slide3">
+					<img src="../Images/Main/slide3.jpg">
+				</div>
 			</div>
-			<div class="slide">
-				<img src="../Images/wine.jpg">
+
+			<div class="navigation">
+				<button class="slideButton first" onclick="displaySlide(0)"></button>
+				<button class="slideButton second" onclick="displaySlide(1)"></button>
+				<button class="slideButton third" onclick="displaySlide(2)"></button>
 			</div>
-			<div class="slide">
-				<img src="../Images/farm.jpg">
+			<!-- <div class="text-show">
+			</div> -->
+		</div>
+		<div id="mainNews">
+			<div>
+				The Food and Drug Administration could authorize a coronavirus vaccine as early as the end of this week. The move would be a pivotal moment in the pandemic, as public health officials say the U.S. is likely to face its worst public health crisis in history this winter.
 			</div>
 		</div>
-
-		<div class="navigation">
-			<label for="r1" class="bar"></label>
-			<label for="r2" class="bar"></label>
-			<label for="r3" class="bar"></label>
-		</div>
-		<!-- <div class="text-show">
-		</div> -->
+		
 	</div>
 
+	<script type="text/javascript" src="../Script/main.js"></script>
 </body>
 
 </html>

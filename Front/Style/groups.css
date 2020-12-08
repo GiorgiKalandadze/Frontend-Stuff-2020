@@ -1,0 +1,60 @@
+.cont {
+	display: flex;
+	justify-content: flex-start;
+}
+
+
+.left{
+	border: 1px solid grey;
+	width: 200px;
+	height: 700px;
+	margin-right: 90px;
+	margin-left: 20px;
+}
+
+.right {
+	background-color: #f1f1f1;
+	padding: 5px;
+	border: 1px solid grey;
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+.group {
+	width: 30%;
+	height: 350px;
+/*	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: clip;*/
+	margin: 5px;
+	background-color: white;
+	border: 1px solid grey;
+
+}
+.groupTitle{
+	text-align: center;
+}
+
+p{
+	padding: 4px;
+}
+
+img{
+	width: 100%;
+	height: 200px;
+}
+
+#categoryTitle{
+	margin-bottom: 20px;
+}
+.category{
+	padding: 3px;
+}
+.checkBoxLabel{
+	
+}
+.categoryCheckBox{
+margin-bottom: 10px;
+}
