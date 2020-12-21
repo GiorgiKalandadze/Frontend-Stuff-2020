@@ -11,10 +11,10 @@
 
 <body>
 	<div class="container">
-		<div class="login-box">
-			<form action="" method="GET">
-				<h2>Sign up</h2>
-				<div class="input-box first">
+		<div class="registerBox">
+			<form class="registerForm"action="" method="GET">
+				<h2 class="registerFormTitle">Sign up</h2>
+				<div class="inputBox first">
 					<div class="i">
 						<i class="fas fa-user"></i>
 					</div>
@@ -22,30 +22,27 @@
 						<input class="input" name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
 					</div>
 				</div>	
-				<div class="input-box third">
+				<div class="inputBox third">
 					<div class="i">
 						<i class="fas fa-envelope-square"></i>
 					</div>
 					<div>
-						<input class="input" name="email" type="text" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'">
-						
+						<input class="input" name="email" type="text" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'">			
 					</div>
 				</div>	
-				<div class="input-box second">
+				<div class="inputBox second">
 					<div class="i">
 						<i class="fas fa-lock"></i>
 					</div>
 					<div>
-						<input class="input" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
-						
+						<input class="input" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">	
 					</div>
 				</div>	
-				<div class="input-box fourth">
+				<div class="inputBox fourth">
 					<div class="i">
 						<i class="fas fa-id-badge"></i>
 					</div>
-					
-						<select>
+						<select class="registerStatus">
 							<option value="Status" selected="selected" class="initial">Status:</option>
 							<option value="Farmer">Farmer</option>
 							<option value="Company">Company</option>
@@ -55,13 +52,10 @@
 						</select>
 					
 				</div>		
-				
 				<input type="submit" class="btn" value="Sign Up">
 			</form>
 		</div>
-		<div class="img">
-			<img src="../Images/Register/join us.svg">
-		</div>
+		<img id="registerBackImg"src="../Images/Register/join us.svg">
 	</div>
 
 
