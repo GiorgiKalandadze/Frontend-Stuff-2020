@@ -12,14 +12,19 @@
 	margin-left: 20px;
 }
 
-.right {
+.list {
 	background-color: #f1f1f1;
 	padding: 5px;
-	border: 1px solid grey;
+	
 	width: 1000px;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
+}
+.right{
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
 }
 
 .group {
@@ -48,13 +53,22 @@ img{
 
 #categoryTitle{
 	margin-bottom: 20px;
+	text-align: center;
 }
 .category{
+	
 	padding: 3px;
 }
 .checkBoxLabel{
 	
 }
+
 .categoryCheckBox{
-margin-bottom: 10px;
+	margin-bottom: 10px;
+	border-radius: 50%;
+}
+
+.pageNavbar{
+	
+	text-align: center;
 }
