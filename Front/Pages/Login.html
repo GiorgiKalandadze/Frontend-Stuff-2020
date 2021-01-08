@@ -11,36 +11,33 @@
 
 <body>
 	<div class="container">
-		<div class="img">
-			<img src="../Images/Login/login.svg">
-		</div>
-		<div class="login-box">
-			<form action="" method="GET">
+		<img id="loginBackImg" src="../Images/Login/login.svg">
+		
+		<div class="loginBox">
+			<form class="loginForm"action="" method="GET">
 				<img src="../Images/Login/profile.png" class="avatar">
 				<h2>Welcome</h2>
-				<div class="input-box first">
+				<div class="inputBox first">
 					<div class="i">
 						<i class="fas fa-user"></i>
 					</div>
 					<div>
-						<h5>Username</h5>
 						<input class="input" name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
 
 					</div>
 				</div>	
-				<div class="input-box second">
+				<div class="inputBox second">
 					<div class="i">
 						<i class="fas fa-lock"></i>
 					</div>
 					<div>
-						<h5>Password</h5>
 						<input class="input" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
 						
 					</div>
 				</div>	
 
-				<a href="#">Forgot Password?</a>
-				<input type="submit" class="btn" value="Login"
+				<a id="forgot"href="#">Forgot Password?</a>
+				<input type="submit" id="loginFormButton" value="Login">
 
 			</form>
 		</div>

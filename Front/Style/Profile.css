@@ -68,7 +68,23 @@ hr{
 @media screen and (max-width: 800px){
 	#container{
 		flex-direction: column;
+		width: 100%;
 
+	}
+	#left-box{
+		width: 100%;
+	}
+	#right-box{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 415px){
+	#container{
+		padding: 0px;
+		margin:0px;
+		flex-direction: column;
+		width: 100%;	
 	}
 	#left-box{
 		width: 100%;

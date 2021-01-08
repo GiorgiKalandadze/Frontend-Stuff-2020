@@ -1,9 +1,18 @@
-* {
+/** {
 	box-sizing: border-box;
 	margin: 0;	
+}*/
+.navbarContainer {
+	background-color: #38d39f;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/*padding: 15px 5%;*/
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 1.2rem;
 }
-
-li, a, button {
+.navElem, .navTitle, #loginButton, #logNavButtonLink{
 	font-family: "Montserrat", sans-serif;
 	font-weight: 500;
 	font-size: 16px;
@@ -11,19 +20,11 @@ li, a, button {
 	text-decoration: none;
 }
 
-header {
-	background-color: #38d39f;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 15px 5%;
-	font-size: 1.2rem;
-}
 #rightSide {
 	display: flex;
 	align-items: center;
 }
-h3 {
+#companyName {
 	cursor: pointer;
 	color: black;
 }
@@ -36,11 +37,9 @@ h3 {
 	transition: all 0.3s ease 0s;
 	opacity:0.7;
 }
-
 .nav_links li a:hover {
 	opacity:1;
 }
-
 #loginButton {
 	height : 30px;
 	width: 100px;
@@ -52,10 +51,32 @@ h3 {
 	transition: all 0.3s ease 0s;
 	background-color: black;
 	opacity: 0.8;
-	
 	background-size: 200%;
 }
 #loginButton:hover{
 	opacity: 1;
 }
 
+
+
+
+@media screen and (max-width: 500px){
+	.navbarContainer{
+		width: 500px;
+		justify-content: flex-start;
+	}
+	#rightSide{
+		border: 2px solid black;
+		display: flex;
+		flex-direction: column;
+	}
+	.nav_links{
+		padding: 0px;
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+	}
+	.navTitle{
+		/*text-align: center;*/
+	}
+}

@@ -1,37 +1,38 @@
-body {
+.container {
 	display:flex;
 	flex-direction: row;
 
 }
 .leftBar{
 	width: 300px;
-	background-color: red;
+	background-color: grey;
 	margin-right: 40px;
 }
-.container {
-	background-color: blue;
+.avatarList {
+	background-color: lightgrey;
 	display:flex;
 	justify-content: flex-start;
-	
 	padding-top : 50px;
 	flex-wrap: wrap;
 }
 
 .info {
-	border: 1px solid black;
-	width: 15%;
+	background-color: white;
+	width: 300px;
 	text-align: center;
 	margin: 10px;
-	
 	cursor: pointer;
 }
 
-img {
-	height: 150px;
-	max-width:100%;
+.listAvatar {
+	height: 200px;
+	width:100%;
+
 }
 
 h4 {
+	margin-top: 5px;
+	margin-bottom: 5px;
 	color : black;
 }
 

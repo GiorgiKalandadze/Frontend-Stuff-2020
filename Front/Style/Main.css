@@ -1,54 +1,118 @@
-body {
-	margin: 0;
-	padding: 5px;
-}
 
-#firstMainRow{
+body{
+	padding: 0px;
+	margin: 0px;
+	background-color: #f5f7f8;
+}
+.post{
+	margin: auto;
+	margin-bottom: 10px;
+	width: 550px;
+	background-color: #fff;
+	padding: 15px;
+}
+.postfirstRow{
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	border: 1px solid grey;
-	padding:10px;
-}
-.slideShow{
-	
-	width: 700px;
-	height:270px;
-	
+	align-items: center;
+	font-family: sans-serif;
+	font-size: 20px;
+
 }
 
-#mainNews{
-	border: 1px solid grey;
-	width: 300px;
-	padding: 10px;
+hr{
+	border-color:#f5f7f8; 
+
+}
+.postAvatar{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.postAuthorName{
+	
+}
+.postText{
+	
+}
+.du{
+	width: 49%;
 }
 
-.navigation{
+.postDate{
+	color:grey;
+	align-self: flex-end;
+	right: 20px;
+	margin-left: auto;
+}
+.postImg{
+	margin: auto;
+	max-width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+.postThirdRow{
+	display: flex;
+	justify-content: space-between;
 	text-align: center;
+	margin-bottom: 10px;
 }
-
-img {
-	width: 100%;
-}
-
-.slide{
-	display: none;
-}
-#slide1{
-	display: block;
-}
-.slideButton{
+.postButton{
+	background-color: #57707d;
+	border:none;
+	white-space: nowrap;
+	color:white;
+	width: 90px;
+	height: 35px;
 	cursor: pointer;
-  	height: 15px;
-  	width: 15px;
-  	margin: 0 2px;
-  	background-color: #bbb;
-  	border-radius: 50%;
-  	display: inline-block;
-  	transition: background-color 0.6s ease;
+	outline: 0px;
 }
-.slideButton:hover {
-  background-color: #717171;
+
+.postButton:hover{
+	background-color: lightgrey;
+}
+.fas{
+	margin-right: 3px;
 }
 
 
+
+
+
+/*Foooter */
+
+li {
+	cursor: pointer;
+
+}
+.footer-hr{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.footerContainer{
+	background-color: #2A2929;
+}
+.footerFirstRow{
+	justify-content: center;
+}
+.footerFirstRow, .footerSecondRow{
+	color:white;
+	background-color: #2A2929;
+}
+.footerSecondRow{
+	display: flex;
+	justify-content: space-around;
+}
+.footer-logo{
+}
+.footerThirdRow{
+	
+	color:white;
+	text-align: center;
+	margin-bottom: 0px;
+}
+.footer-logo{
+	height: 100px;
+
+}

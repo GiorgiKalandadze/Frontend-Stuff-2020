@@ -1,0 +1,15 @@
+.footerContainer{
+	margin-top: 20px;
+	border: 1px solid black;
+}
+.footerFirstRow{
+	margin-top: 30px;
+	
+	display: flex;
+}
+.column {
+	margin-right: 50px;
+}
+.First{
+	margin-left: 50px;
+}

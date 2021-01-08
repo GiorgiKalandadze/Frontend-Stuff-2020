@@ -2,61 +2,136 @@
 <html lang="en-us">
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-  <title>List</title>
+  <title>Main</title>
   <link rel="stylesheet" type="text/css" href="../Style/Main.css">
 	<link rel="stylesheet" type="text/css" href="../Style/Header.css">
+	<link rel="stylesheet" type="text/css" href="../Style/footer.css">
   <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
 
 </head>	
 
 <body>
-	<header class="navbar-container">
-		<h3 id="company-name">FarmVille</h3>
-		<div id="rightSide">
-			<nav>
-				<ul class="nav_links">
-					<li><a href="#">Main</a></li>
-					<li><a href="#">Companies</a></li>
-					<li><a href="#">Farmers</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Contact</a></li>
+	<header class="navbarContainer">
+	    <h3 id="companyName">FarmVille</h3>
+	    <div id="rightSide">
+	      <nav>
+	        <ul class="nav_links">
+	          <li class="navElem"><a class="navTitle" href="#">Main</a></li>
+	          <li class="navElem"><a class="navTitle" href="#">Companies</a></li>
+	          <li class="navElem"><a class="navTitle" href="#">Farmers</a></li>
+	          <li class="navElem"><a class="navTitle" href="#">About Us</a></li>
+	          <li class="navElem"><a class="navTitle" href="#">Contact</a></li>
 
-				</ul>
-			</nav>
-			<a id="login" href="#"><button id="loginButton">Login</button></a>
-		</div>
-	</header>
+	        </ul>
+	      </nav>
+	      <a class="navTitle" href="#"><button id="loginButton">Login</button></a>
+	    </div>
+  	</header>
 
-	<div id="firstMainRow">
-		<div class="slideShow">
-			<div class="slides">
-				<div class="slide" id="slide1">
-					<img src="../Images/Main/slide1.jpg">
-				</div>
-				<div class="slide" id="slide2">
-					<img src="../Images/Main/slide2.jpg">
-				</div>
-				<div class="slide" id="slide3">
-					<img src="../Images/Main/slide3.jpg">
-				</div>
-			</div>
 
-			<div class="navigation">
-				<button class="slideButton first" onclick="displaySlide(0)"></button>
-				<button class="slideButton second" onclick="displaySlide(1)"></button>
-				<button class="slideButton third" onclick="displaySlide(2)"></button>
-			</div>
-			<!-- <div class="text-show">
-			</div> -->
-		</div>
-		<div id="mainNews">
-			<div>
-				The Food and Drug Administration could authorize a coronavirus vaccine as early as the end of this week. The move would be a pivotal moment in the pandemic, as public health officials say the U.S. is likely to face its worst public health crisis in history this winter.
-			</div>
-		</div>
-		
-	</div>
+	<div class="containerPost">
+	  	<div class="post">
+	  		<div class="postfirstRow">
+	  			<img class="postAvatar" src="../Images/People/farmer.jpg">
+	  			<p class="postAuthorName">Giorgi Beridze</p>
+	  			<p class="postDate">26 Oct</p>
+	  		</div>
+	  		<hr>
+	  		<div class="postSecondRow">
+	  		<p class="postText">
+	  			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	  		</p>
+	  		</div>
+	  		<div class="postThirdRow">
+	  			<img class="postImg" src="../Images/Posts/post1.jpg">
+	  		</div>
+
+	  		<button class="postButton"><i class="fas fa-thumbs-up"></i>Like</button>
+	  		<button class="postButton"><i class="fas fa-bookmark"></i>Save</button>
+	  	</div>
+
+	  	<div class="post">
+	  		<div class="postfirstRow">
+	  			<img class="postAvatar" src="../Images/People/farmer3.jpg">
+	  			<p class="postAuthorName">Nino Menabdze</p>
+	  			<p class="postDate">24 Nov</p>
+	  		</div>
+	  		<hr>
+	  		<div class="postSecondRow">
+	  		<p class="postText">
+	  			Aenean vel nunc quam. Sed a enim lacinia, condimentum nisl vel, commodo dui. Maecenas luctus orci non leo consectetur, consequat dictum ipsum eleifend.
+	  		</p>
+	  		</div>
+	  		<div class="postThirdRow">
+	  			<img class="postImg du" src="../Images/Posts/post 2.jpg">
+	  			<img class="postImg du" src="../Images/Posts/post 2(2).jpg">
+	  		</div>
+
+	  		<button class="postButton"><i class="fas fa-thumbs-up"></i>Like</button>
+	  		<button class="postButton"><i class="fas fa-bookmark"></i>Save</button>
+	  	</div>
+
+	  	<div class="post">
+	  		<div class="postfirstRow">
+	  			<img class="postAvatar" src="../Images/People/farmer6.jpg">
+	  			<p class="postAuthorName">Archil Gamzardia</p>
+	  			<p class="postDate">05 Sep</p>
+	  		</div>
+	  		<hr>
+	  		<div class="postSecondRow">
+	  		<p class="postText">
+	  			Check out new vision in AgroCulture <3. France
+	  		</p>
+	  		</div>
+	  		<div class="postThirdRow">
+	  			<iframe width="560" height="315" src="https://www.youtube.com/embed/1bieukoWx1Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  		</div>
+
+	  		<button class="postButton"><i class="fas fa-thumbs-up"></i>Like</button>
+	  		<button class="postButton"><i class="fas fa-bookmark"></i>Save</button>
+	  	</div>
+  	</div>
+
+
+  	<footer class="footerContainer">
+    <div class="footerFirstRow">
+      <div class="column First">
+        <ul>
+          <li>About Us</li>
+          <li>Privacy Policy</li>
+          <li>Milk</li>
+        </ul>
+      </div>
+
+      <div class="column Second">
+        <ul>
+          <li>032(2)2739212</li>
+          <li>info@rentpointer.com</li>
+          <li>David Agmashenebeli 27a</li>
+        </ul>
+      </div>
+
+      <div class="column Third">
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+          <li>Linkedin</li>
+        </ul>
+      </div>
+
+    </div>
+    <hr class="footer-hr">
+    <div class="footerSecondRow">
+    	<img src="../Images/gita.png" class="footer-logo">
+    	<img src="../Images/btu.png" class="footer-logo">
+    </div>
+    <div class="footerThirdRow">
+    	<p>©2020 FarmWeb — All rights reserved</p>
+    </div>
+  </footer>
+
 
 	<script type="text/javascript" src="../Script/main.js"></script>
 </body>
