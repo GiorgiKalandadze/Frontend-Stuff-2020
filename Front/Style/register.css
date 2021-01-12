@@ -1,28 +1,31 @@
-/** {
-	padding: 0;
-	margin : 0;
-	box-sizing: border-box;
-}*/
-.container{
+body{
+	margin:0px;
+	padding: 0px;
+}
+.register-container{
     display: flex;
     flex-direction: row;
    	justify-content:space-between;
    	align-items: center;
    	padding-left: 50px;
    	padding-right: 50px;
+   	margin-bottom: 50px;
 }
 .registerBox{
 	text-align: center;
 	height : 500px;
 	
 }
+#register-alert{
+	color:red;
+	margin-bottom: 0px;
+	visibility: hidden;
+}
 #registerBackImg{
-	/*border: 2px solid green;*/
 	margin-top: 100px;
-	width : 500px;
+	width : 600px;
 }
 .registerForm {
-	/*border: 2px solid blue;*/
 	width : 350px;
 }
 .registerForm .registerFormTitle{
@@ -44,7 +47,7 @@
 }
 
 .i i {
-	color:#38d39f;
+	color:#637a94;
 }
 .input {
 	width: 100%;
@@ -70,7 +73,8 @@
 	font-size: 1.2rem;
 	/*outline: none;*/
 	border: none;
-	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	background-color: #637a94;
+	opacity: 0.9;
 	cursor: pointer;
 	color: #fff;
 	background-size: 200%;
@@ -78,7 +82,7 @@
 	text-transform: uppercase;
 }
 .btn:hover{
-	background-position: right;
+	opacity: 1;
 }
 .registerStatus {
 	padding: 0.5rem 0.7rem;
@@ -98,12 +102,21 @@
 
 @media screen and (max-width: 950px){
 	#registerBackImg{
+		border: 1px solid black;
 		display: none;
 	}
+
+	.registerBox{
+		max-width: 100%;
+		margin: auto;
+	}
+	
 	.registerForm{
-		width: 100%; 
+		border: 1px solid black;
+		margin: auto;
+		max-width: 100%; 
 	}
 	.container{
-		justify-content: center;
+		
 	}
 }

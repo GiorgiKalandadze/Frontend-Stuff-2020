@@ -35,6 +35,12 @@ body{
 	margin : 15px 0;
 	color : #333;
 }
+#wrong-login{
+	visibility: hidden;
+	text-align: center;
+	margin:0px;
+	color: red;
+}
 .inputBox {
 	display : flex;
 	flex-direction: row;

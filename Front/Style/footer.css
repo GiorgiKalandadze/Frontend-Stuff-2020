@@ -1,15 +1,32 @@
+/*Foooter */
 .footerContainer{
-	margin-top: 20px;
-	border: 1px solid black;
+	background-color: #536272;
+	border: 1px solid #536272;
+}
+.footer-hr{
+	margin-left: 20px;
+	margin-right: 20px;
 }
 .footerFirstRow{
-	margin-top: 30px;
-	
 	display: flex;
+	justify-content: space-around;
 }
-.column {
-	margin-right: 50px;
+.footer-li{
+	cursor: pointer;
+
 }
-.First{
-	margin-left: 50px;
+.footerFirstRow, .footerSecondRow{
+	color:white;
+}
+.footerSecondRow{
+	display: flex;
+	justify-content: space-around;
+}
+
+.footerThirdRow{	
+	color:white;
+	text-align: center;
+}
+.footer-logo{
+	height: 100px;
 }
