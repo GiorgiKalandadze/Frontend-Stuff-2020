@@ -68,7 +68,7 @@
 	transition: all 0.3s ease 0s;
 	background-color: #F7882F;
 	opacity: 0.9;
-	background-size: 200%;
+	
 }
 #login-button:hover{
 	opacity: 1;
