@@ -1,7 +1,3 @@
-/** {
-	box-sizing: border-box;
-	margin: 0;	
-}*/
 .navbarContainer {
 	color: white;
 	background-color: #637a94;
@@ -42,6 +38,9 @@
 	cursor: pointer;
 	color: white;
 }
+.nav_links{
+	display: flex;
+}
 
 .nav_links li   {
 	display: inline-block;
@@ -72,25 +71,4 @@
 }
 #login-button:hover{
 	opacity: 1;
-}
-
-
-
-
-@media screen and (max-width: 500px){
-	.navbarContainer{
-		flex-direction: column;
-		justify-content: flex-start;
-	}
-	#rightSide{
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.nav_links{
-		padding: 0px;
-		display: flex;
-		text-align: center;
-		flex-wrap: wrap;
-	}
-	
 }

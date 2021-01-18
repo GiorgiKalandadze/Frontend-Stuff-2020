@@ -1,7 +1,11 @@
+* {
+	box-sizing: border-box;
+}
 body{
 	padding: 0px;
 	margin: 0px;
 	background-color: #f1f1f1;
+	font-family: 'Raleway', sans-serif;
 }
 
 /*TOP */
@@ -67,7 +71,6 @@ body{
 .feature-container{
 	margin: auto;
 	margin-top: 100px;
-	margin-bottom: 100px;
 	padding: 10px;
 	width: 1200px;
 	background-color:#6c7a8b;
@@ -84,6 +87,7 @@ body{
 	width: 200px;
 }
 .feature-title{
+	color: white;
 	margin-top:15px;
 	margin-bottom:15px;
 	font-size: 25px;

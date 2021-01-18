@@ -1,8 +1,9 @@
 //Header navigation
 document.addEventListener('click', function (e){
-	e.preventDefault();
+	// e.preventDefault();
 	if(e.target.id == 'join-button'){
 		document.getElementsByClassName('main-content')[0].innerHTML = registerHTML;
+
 	}
 	if(e.target.id == 'home-button'){
 		document.getElementsByClassName('main-content')[0].innerHTML = startHTML;
@@ -15,6 +16,7 @@ document.addEventListener('click', function (e){
 		}
 	}
 	if(e.target.id == 'header-nav-main'){
+		
 		if(logged){
 			document.getElementsByClassName('main-content')[0].innerHTML = mainHTML;
 		} else {	
@@ -22,14 +24,20 @@ document.addEventListener('click', function (e){
 		}		
 	}
 	if(e.target.id == 'header-nav-groups'){
+		// history.pushState('a','asd','/iasna');
 		document.getElementsByClassName('main-content')[0].innerHTML = groupsListHTML;
 		loadGroups();
 	}
 	if(e.target.id == 'header-nav-farmers'){
-		document.getElementsByClassName('main-content')[0].innerHTML = nav3;
+		document.getElementsByClassName('main-content')[0].innerHTML = peopleListHTML;
+		loadFarmers();
+	}
+	if(e.target.id == 'header-nav-trade'){
+		document.getElementsByClassName('main-content')[0].innerHTML = tradeHTML;
+		loadItems();
 	}
 	if(e.target.id == 'header-nav-about'){
-		document.getElementsByClassName('main-content')[0].innerHTML = nav4;
+		document.getElementsByClassName('main-content')[0].innerHTML = aboutHTML;
 	}
 	if(e.target.id == 'header-nav-contact'){
 		document.getElementsByClassName('main-content')[0].innerHTML = contactHTML;
@@ -37,6 +45,47 @@ document.addEventListener('click', function (e){
 }); 
 
 
+
+//about
+var aboutHTML =
+`
+<div class="about">
+      <div class="about-info">
+      <h2>AgroNet - A new Agri Perspective</h2>
+      <p>
+        Praesent interdum velit justo, in dignissim dolor bibendum sed. Curabitur ac accumsan ligula. Cras nec est sed felis volutpat sodales. Morbi venenatis feugiat tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque nec pellentesque lectus, in luctus turpis. Pellentesque tristique quam quis nisi laoreet cursus. Proin rutrum elit ut lacus volutpat, sit amet laoreet lacus interdum. Duis dui sem, varius iaculis ipsum ut, egestas molestie massa. Suspendisse ut libero non eros interdum finibus id ac arcu. Sed sit amet purus fermentum, porta sapien at, aliquet massa. Nunc imperdiet nunc sem, euismod cursus sapien mollis vel. Sed pretium, libero eget laoreet dignissim, quam mauris hendrerit dolor, vel consequat nibh tortor ac quam. Sed rutrum, turpis non condimentum efficitur, libero ante egestas elit, non dictum nunc erat ac erat.
+
+
+      </p>
+      </div>
+      <div class="team">
+          <div class="member">
+            <div class="member-img-div">
+              <img id="ap" class="member-img" src="../Images/People/apa.jpg">
+            </div>
+            <h3 class="member-name">Luka Apkhaidze</h3>
+            <h5 class="member-occupation">Economist</h5>
+            <button class="member-contact">Contact</button>
+          </div>
+          <div class="member">
+            <div class="member-img-div">
+              <img id="bara" class="member-img" src="../Images/People/bara.jpg">
+            </div>
+            <h3 class="member-name">Giorgi Baramidze</h3>
+            <h5 class="member-occupation">Business administration</h5>
+            <button class="member-contact">Contact</button>
+          </div>
+          <div class="member">
+            <div class="member-img-div">
+              <img id="geta" class="member-img" src="../Images/People/geta.jpg">
+            </div>
+            <h3 class="member-name">Irakli Getashvili</h3>
+            <h5 class="member-occupation">Social Media Manager</h5>
+            <button class="member-contact">Contact</button>
+          </div>
+      </div>
+  </div>
+`
 //Start
 var startHTML = `<div class="top-row">
   		<div class="welcome">
@@ -50,7 +99,7 @@ var startHTML = `<div class="top-row">
 		  		Your browser does not support the video tag.
 			</video> -->
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/1bieukoWx1Q?autoplay=1&mute=1" frameborder="0"></iframe>
-			-->
+			
 		</div>
 		
 	</div>
@@ -214,13 +263,34 @@ var loginHTML = `<div class="login-container">
 //Main page - logged in; posts; contact; ads
 var mainHTML = `<div id="main-feed-cont">
   		<div id="main-feed-left">
-  			<h3>LEFT</h3>
-  		</div>
+        <div class="left-ad">
+          <img class="left-ad-img" src="../Images/Ads/ad3.png">
+        </div>
+        <div class="left-ad">
+          <img class="left-ad-img" src="../Images/Ads/ad4.png">
+        </div>
+      </div>
 
   		<div class="containerPost">
+  		 <div id="vip">
+          <button class="vip-slide" id="prev">&#10094;</button>
+          <div class="vip-item">
+            <img class="vip-img" id="0" src="../Images/Items/tools1.png">
+          </div>
+          <div class="vip-item">
+            <img class="vip-img" id="1"src="../Images/Items/tools2.jpg">
+          </div>
+          <div class="vip-item">
+            <img class="vip-img" id="2"src="../Images/Items/tools3.jpg">
+          </div>
+           <div class="vip-item">
+            <img class="vip-img"  id="3"src="../Images/Items/tractor1.jpg">
+          </div> 
+          <button class="vip-slide" id="next">&#10095;</button>
+        </div>
 		  	<div class="post">
 		  		<div class="postfirstRow">
-		  			<img class="postAvatar" src="../Images/People/farmer.jpg">
+		  			<img class="postAvatar" src="../Images/People/farmer0M.jpg">
 		  			<p class="postAuthorName">Giorgi Beridze</p>
 		  			<p class="postDate">26 Oct</p>
 		  		</div>
@@ -237,10 +307,12 @@ var mainHTML = `<div id="main-feed-cont">
 		  		<button class="postButton"><i class="fas fa-thumbs-up"></i>Like</button>
 		  		<button class="postButton"><i class="fas fa-bookmark"></i>Save</button>
 		  	</div>
-
+		  	<div class="ad">
+          		<img class="post-ad" src="../Images/Ads/ad2.jpg">
+        	</div>
 		  	<div class="post">
 		  		<div class="postfirstRow">
-		  			<img class="postAvatar" src="../Images/People/farmer3.jpg">
+		  			<img class="postAvatar" src="../Images/People/farmer3F.jpg">
 		  			<p class="postAuthorName">Nino Menabdze</p>
 		  			<p class="postDate">24 Nov</p>
 		  		</div>
@@ -261,7 +333,7 @@ var mainHTML = `<div id="main-feed-cont">
 
 		  	<div class="post">
 		  		<div class="postfirstRow">
-		  			<img class="postAvatar" src="../Images/People/farmer6.jpg">
+		  			<img class="postAvatar" src="../Images/People/farmer6M.jpg">
 		  			<p class="postAuthorName">Archil Gamzardia</p>
 		  			<p class="postDate">05 Sep</p>
 		  		</div>
@@ -284,38 +356,44 @@ var mainHTML = `<div id="main-feed-cont">
   		<div id="main-feed-right">
   			<h3 id="contact-label">Contact</h3>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer.jpg">
+  				<img class="chat-img" src="../Images/People/farmer0M.jpg">
   				<h5 class="chat-name">James Gordon</h5>
   			</div>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer1.jpg">
+  				<img class="chat-img" src="../Images/People/farmer1M.jpg">
   				<h5 class="chat-name">Selena Brimms</h5>
   			</div>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer2.jpeg">
+  				<img class="chat-img" src="../Images/People/farmer2M.jpg">
   				<h5 class="chat-name">Gustav Pather</h5>
   			</div>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer3.jpg">
+  				<img class="chat-img" src="../Images/People/farmer3F.jpg">
   				<h5 class="chat-name">Oscar Merchant</h5>
   			</div>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer4.jpeg">
+  				<img class="chat-img" src="../Images/People/farmer4F.jpg">
   				<h5 class="chat-name">Steve O'Brien</h5>
   			</div>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer4.jpg">
+  				<img class="chat-img" src="../Images/People/farmer5F.jpg">
   				<h5 class="chat-name">Helen Gomez</h5>
   			</div>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer5.jpg">
+  				<img class="chat-img" src="../Images/People/farmer6M.jpg">
   				<h5 class="chat-name">Leonard Swift</h5>
   			</div>
   			<div class="main-contact-row">
-  				<img class="chat-img" src="../Images/People/farmer6.jpg">
+  				<img class="chat-img" src="../Images/People/farmer7F.jpg">
   				<h5 class="chat-name">George Halpert</h5>
   			</div>
   			
+  			<div id="fixed-ad">
+          		<img id="fixed-img" src="../Images/Ads/ad1.jpg">
+        	</div>
+        	<div id="fixed-ad">
+          		<img id="fixed-img" src="../Images/Ads/ad5.png">
+        	</div>
   		</div>
 	
   	</div>`
@@ -324,7 +402,7 @@ var mainHTML = `<div id="main-feed-cont">
 var profileHTML = `<div class="biggest">
   <div id="container">
     <div id="left-box">
-      <img src="../Images/People/farmer.jpg" style="width: 100%">
+      <img id="profile-img" src="../Images/People/farmer0M.jpg" style="width: 100%">
       <div id="info">
         <h3>Giorgi Beridze</h3>
         <p>
@@ -533,6 +611,7 @@ var groupsListHTML =
 				<button id="animals"class="category">Animals</button>
 				<button id="fruit"class="category">Fruit</button>
 				<button id="vegetable"class="category">Vegetable</button>
+				<button id="tech"class="category">Technology</button>
 			</div>	
 		</div>
 		<div class="group-right">
@@ -564,7 +643,7 @@ var groupinHTML =
 				<div class="containerPost">
 		  			<div class="post">
 				  		<div class="postfirstRow">
-				  			<img class="postAvatar" src="../Images/People/farmer.jpg">
+				  			<img class="postAvatar" src="../Images/People/farmer0M.jpg">
 				  			<p class="postAuthorName">Giorgi Beridze</p>
 				  			<p class="postDate">26 Oct</p>
 				  		</div>
@@ -583,7 +662,7 @@ var groupinHTML =
 
 		  			<div class="post">
 		  				<div class="postfirstRow">
-		  					<img class="postAvatar" src="../Images/People/farmer3.jpg">
+		  					<img class="postAvatar" src="../Images/People/farmer3M.jpg">
 				  			<p class="postAuthorName">Nino Menabdze</p>
 				  			<p class="postDate">24 Nov</p>
 		  				</div>
@@ -603,7 +682,7 @@ var groupinHTML =
 
 				  	<div class="post">
 				  		<div class="postfirstRow">
-				  			<img class="postAvatar" src="../Images/People/farmer6.jpg">
+				  			<img class="postAvatar" src="../Images/People/farmer6M.jpg">
 				  			<p class="postAuthorName">Archil Gamzardia</p>
 				  			<p class="postDate">05 Sep</p>
 				  		</div>
@@ -624,7 +703,17 @@ var groupinHTML =
 			</div>
 `
 
-
+var peopleListHTML = 
+`
+	<div class="farmers-container">
+      <div class="search-container">
+        <input id='farmers-search'type="text" placeholder="Search.." name="search">
+        <button id="farmer-search-button" type="submit"><i class="fa fa-search"></i></button>
+		  </div>
+		  <div class="avatarList" id='farmers-list'>
+		  </div>
+    </div>
+`
 
 
 
@@ -661,7 +750,7 @@ var users =
 
 //Buttons
 document.addEventListener('click', function (e){
-	e.preventDefault();
+	// e.preventDefault();
 	if(e.target.id == 'loginFormButton'){
 		var valid = checkUserLogin();
 		if(valid){
@@ -789,7 +878,7 @@ var groups =
 		"followers":"2,345"},
 ]
 document.addEventListener('click', function (e){
-	e.preventDefault();
+	// e.preventDefault();
 	if(e.target.id == 'birds'){
 		filterGroups(e, 'group bird');
 	}
@@ -802,9 +891,13 @@ document.addEventListener('click', function (e){
 	if(e.target.id == 'vegetable'){
 		filterGroups(e, 'group vegetable');
 	}
+	if(e.target.id == 'tech'){
+		filterGroups(e, 'group tech');
+	}
 	if(e.target.id == 'back'){
 		document.getElementsByClassName('group-cont')[0].innerHTML = groupsListHTML;
 		loadGroups();
+		checked = 0;
 	}
 	if(e.target.id == 'follow-group'){
 		document.getElementById('follow-group').style.display = 'none';
@@ -825,6 +918,19 @@ document.addEventListener('click', function (e){
 		}
 		
 		document.getElementsByClassName('group-background-img')[0].src = src;
+	}
+	if(e.target.className == 'listAvatar'){
+		document.getElementsByClassName('main-content')[0].innerHTML = profileHTML;
+		document.getElementsByClassName('profile-left-button')[0].style.visibility = 'hidden';
+		document.getElementsByClassName('profile-left-button')[1].style.visibility = 'hidden';
+		var src = '';
+		for(i = 0; i < farmers.length; i++){
+			if(farmers[i].id == e.target.id){
+				src = farmers[i].img;
+			}
+		}
+		
+		document.getElementById('profile-img').src = src;
 	}
 	
 })
@@ -860,7 +966,7 @@ function filterGroups(e, type){
 	var groups = document.getElementsByClassName(type);
 	
 	if(st.backgroundColor == 'rgb(255, 255, 255)'){
-		console.log('A');
+		
 		checked += 1;
 		for(i = 0; i < groups.length; i++){
 			groups[i].style.display = 'block';
@@ -909,4 +1015,372 @@ function loadGroups(){
 		document.getElementsByClassName('group-list')[0].appendChild(div);
 
 	}
+}
+
+/*Peope, farmers */
+var farmers = 
+[
+	{"name":"Aidan Butler", 'gender':'male', 'profession':'Soil and plant scientist', 
+		'img':'../Images/People/farmer0M.jpg', 'id':'0'},
+	{"name":"Olive Peterson", 'fegender':'female', 'profession':'Farmer', 
+		'img':'../Images/People/farmer3F.jpg', 'id':'1'},
+	{"name":"Aaron Jenkins", 'gender':'male', 'profession':'Agricultural economist', 
+		'img':'../Images/People/farmer1M.jpg', 'id':'2'},
+	{"name":"Joey Cox", 'gender':'male', 'profession':'Conservation planner', 
+		'img':'../Images/People/farmer2M.jpg', 'id':'3'},
+	{"name":"Luna Evans", 'gender':'female', 'profession':'Farmer', 
+		'img':'../Images/People/farmer4F.jpg', 'id':'4'},
+	{"name":"Valentina Flores", 'gender':'female', 'profession':'Agricultural salesperson ', 
+		'img':'../Images/People/farmer5F.jpg', 'id':'5'},
+	{"name":"Martin Murray", 'gender':'male', 'profession':'Farmer', 
+		'img':'../Images/People/farmer6M.jpg', 'id':'6'},
+	{"name":"Angelina Everly", 'gender':'mfeale', 'profession':'Agricultural Expert', 
+		'img':'../Images/People/farmer7F.jpg', 'id':'7'},
+]
+
+function loadFarmers(){
+	for(i = 0; i < farmers.length; i++){
+		var farmer = farmers[i];
+		var div = document.createElement('div');
+		div.className = 'info';
+		var img = document.createElement('img');
+		img.className = 'listAvatar';
+		img.src  = farmer.img;
+		img.id = farmer.id;
+		var name = document.createElement('h4');
+		name.innerHTML = farmer.name;
+		var profession = document.createElement('h4');
+		profession.innerHTML = farmer.profession;
+		div.appendChild(img);
+		div.appendChild(name);
+		div.appendChild(profession);
+		document.getElementById('farmers-list').appendChild(div);
+	}
+}
+
+
+
+
+
+//Trade, Items, Item info  ///////////////////////////////////////////////////////////////////////////////////
+var checkedCounter = 0;
+
+function displayAllItems(){
+	var itemsArr = document.getElementsByClassName("trade-item");
+	for(i = 0; i < itemsArr.length; i++){
+		itemsArr[i].style.display = "block";
+	}
+}
+function removeAllItems(){
+	var itemsArr = document.getElementsByClassName("trade-item");
+	for(i = 0; i < itemsArr.length; i++){
+		itemsArr[i].style.display = "none";
+	}
+}
+
+function filterItems(e){
+	if(checkedCounter == 0){
+		removeAllItems();
+	}
+	var itemsArr = document.getElementsByClassName('trade-item');
+	var splitted = e.target.className.split("-");
+	var filter = splitted[1];
+	var elem = splitted[2];
+	var checked = document.getElementsByClassName(e.target.className)[0].checked;
+	
+	if(checked){
+		checkedCounter += 1;
+		for(i = 0; i < itemsArr.length; i++){
+			var item = itemsArr[i];
+			
+			if(item.getElementsByClassName('item-' + filter)[0].innerHTML == elem){
+				item.style.display = 'block';
+			} 	
+		}
+	} else {
+		checkedCounter -= 1;
+		if(checkedCounter == 0){
+			displayAllItems();
+		} else {
+			for(i = 0; i < itemsArr.length; i++){
+			var item = itemsArr[i];
+			
+			if(item.getElementsByClassName('item-' + filter)[0].innerHTML == elem){
+				item.style.display = 'none';
+			} 	
+		}
+		}
+	}
+	
+}
+
+document.addEventListener('click', function (e){
+	//e.preventDefault();
+	if(e.target.className == 'item-img'){
+		document.getElementsByClassName('trade-right')[0].innerHTML = itemInHTML;
+		loadItemIn(e);
+	}
+	if(e.target.className.includes("trade", 0)){
+		filterItems(e);
+	}
+	if(e.target.id == 'trade-in-back'){
+		document.getElementsByClassName('trade-right')[0].innerHTML = '';
+		loadItems();
+	}
+	
+})
+
+var items = 
+[
+	{"name":"Agro Tools", "type": "tools", "id":"0", 
+		"img":"../Images/Items/tools1.png", 
+		"description":"Sed non purus nec mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. ",
+		"price":"78$", "location":"Tbilisi", 'delivery':'Yes'},
+	{"name":"Agro Tools", "type": "tools", "id":"1", 
+		"img":"../Images/Items/tools2.jpg", 
+		"description":" mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. ",
+		"price":"85$", "location":"Kutaisi", 'delivery':'No'},
+	{"name":"Agro Tools", "type": "tools", "id":"2", 
+		"img":"../Images/Items/tools3.jpg", 
+		"description":"Scelerisque in dictum non consectetur a erat nam at lectus. ",
+		"price":"94$", "location":"Batumi", 'delivery':'Yes'},
+
+	{"name":"Tractor", "type": "transport", "id":"3", 
+		"img":"../Images/Items/tractor1.jpg", 
+		"description":"Arcu felis bibendum ut tristique et. Sed adipiscing diam donec adipiscing tristique. ",
+		"price":"4700$", "location":"Batumi", 'delivery':'No'},
+	{"name":"Tractor", "type": "transport", "id":"4", 
+		"img":"../Images/Items/tractor2.jpg", 
+		"description":"Semper feugiat nibh sed pulvinar proin. Habitant morbi tristique senectus et.",
+		"price":"7100$", "location":"Tbilisi", 'delivery':'No'},
+	{"name":"Tractor", "type": "transport", "id":"5", 
+		"img":"../Images/Items/tractor3.jpg", 
+		"description":"Senectus et netus et malesuada. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. ",
+		"price":"10200$", "location":"Kutaisi", 'delivery':'No'},
+	{"name":"Tractor", "type": "transport", "id":"6", 
+		"img":"../Images/Items/tractor4.png", 
+		"description":"Tellus pellentesque eu tincidunt tortor. Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur.",
+		"price":"15700$", "location":"Tbilisi", 'delivery':'No'},
+]
+
+
+function loadItems(){
+	var d = document.createElement('div');
+	d.className = 'trade-list';
+	for(i = 0; i < items.length; i++){
+		var item = items[i];
+		var div = document.createElement('div');
+		div.className = 'trade-item';
+		var img = document.createElement('img');
+		img.src = item.img;
+		img.className = 'item-img';
+		img.id = item.id;
+		var h3 = document.createElement('h3');
+		h3.className = 'item-title';
+		h3.innerHTML  = item.name;
+		var type = document.createElement('p');
+		type.className ='item-type';
+		type.innerHTML = item.type;
+		var location = document.createElement('p');
+		location.className ='item-location';
+		location.innerHTML = item.location;
+		var p = document.createElement('p');
+		p.innerHTML = item.description;
+		p.className = 'item-description';
+		div.appendChild(img);
+		div.appendChild(h3);
+		div.appendChild(type);
+		div.appendChild(location);
+		div.appendChild(p);
+		d.appendChild(div);
+	}
+	document.getElementsByClassName('trade-right')[0].appendChild(d);
+	
+}
+
+
+
+// var slider = document.getElementById("price-ranger");
+// var output = document.getElementById("price-value");
+// output.innerHTML = slider.value; // Display the default slider value
+// // Update the current slider value (each time you drag the slider handle)
+// slider.oninput = function() {
+//   output.innerHTML = document.getElementById("price-ranger").value;
+// }
+
+
+
+var itemInHTML = 
+`<div class="item-in">
+				<div class="item-in-left">
+					<img class="item-in-back-img" src="">
+				</div>
+				<div class="item-in-right">
+					<div class="item-in-data">
+						<div class="item-in-attribute">
+							<label>Name:</label>
+							<label class="item-in-value" id="item-in-name"></label>
+						</div>
+						<div class="item-in-attribute">
+							<label>Price:</label>
+							<label class="item-in-value" id="item-in-price"></label>
+						</div>
+						<div class="item-in-attribute">
+							<label>Location:</label>
+							<label class="item-in-value" id="item-in-location"></label>
+						</div>
+					
+					</div>
+					<button id="trade-in-back">Back</button>
+				</div>
+			</div>
+`
+
+var tradeHTML = 
+`
+<div class="trade-cont">
+		<div class="trade-left">
+			<div class="trade-categorys">
+				<div class="filter-box">
+					<label class="trade-category-label">Type</label>
+					<ul class='filter-checkboxes'>
+
+						<li>
+							<input type="checkbox" class="trade-type-fruit"><label>Fruit
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-type-vegetable"><label>Vegetable
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-type-animal"><label>Animal
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-type-bird"><label>Bird
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-type-bean"><label>Bean
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-type-transport"><label>Transport
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-type-tools"><label>Tools
+							</label>
+						</li><li>
+							<input type="checkbox" class="trade-type-farms"><label>Farms
+							</label>
+						</li>
+						
+					</ul>
+				</div>
+				<hr class="trade-hr">
+				<div class="filter-box">
+					<label class="trade-category-label" id="price-inp">Price</label>
+					<input type="range" min="1" max="1000" value="500" class="slider" 
+							id="price-ranger">
+					<p id="price">Value: <span id="price-value"></span></p>
+				</div>	
+				<hr class="trade-hr">
+				<div class="filter-box">
+					<label class="trade-category-label">Location</label>
+					<ul class='filter-checkboxes'>
+						<li>
+							<input type="checkbox" class="trade-location-Tbilisi"><label>Tbilisi
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-location-Batumi"><label >Batumi
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-location-Kutaisi"><label>Kutaisi
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-location-Telavi"><label>Telavi
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-location-Zugdidi"><label>Zugdidi
+							</label>
+						</li>
+						<li>
+							<input type="checkbox" class="trade-location-Abroad"><label>Abroad
+							</label>
+						</li>
+						
+					</ul>
+				</div>
+				<hr class="trade-hr">
+				<div class="filter-box">
+					<label class="trade-category-label">Delivery</label>
+					<ul class='filter-checkboxes'>
+						<li>
+							<input type="checkbox" class="trade-delivery-yes">Yes<label>
+							</label>
+						</li>
+					</ul>
+				</div>
+				<hr class="trade-hr">
+			</div>	
+		</div>
+		
+		<div class="trade-right">
+			
+		</div>
+	</div>
+`
+
+
+function loadItemIn(e){
+	var id = e.target.id;
+	var item = items[id];
+	document.getElementsByClassName('item-in-back-img')[0].src = item.img;
+	document.getElementById('item-in-name').innerHTML = item.name;
+	document.getElementById('item-in-price').innerHTML = item.price;
+	document.getElementById('item-in-location').innerHTML = item.location;
+	document.getElementsByClassName('trade-right')[0].style.height = '650px';
+	
+}
+
+
+//Vip slider ///////////////////////////////////////////////////////////////////////
+document.addEventListener('click', function (e){
+	
+	if(e.target.className == 'vip-slide'){
+		if(e.target.id == 'next'){
+			vipCounter += 1;
+		} else {
+			vipCounter -= 1;
+		}
+		changeSlide(vipCounter);
+	}
+	if(e.target.className == 'vip-img'){
+		document.getElementsByClassName('main-content')[0].innerHTML = tradeHTML;
+		loadItems();
+		document.getElementsByClassName('trade-right')[0].innerHTML = itemInHTML;
+		loadItemIn(e);
+
+	}
+});
+var vipCounter = 0;
+function changeSlide(counter){
+	if(counter < 0){
+		counter = items.length + counter;
+	}
+	if(counter >= items.length){
+		counter = counter % items.length;
+	}
+
+	var slides = document.getElementsByClassName('vip-img');
+	slides[0].src = items[counter].img;
+	slides[1].src = items[(counter + 1) % items.length].img;
+	slides[2].src = items[(counter + 2) % items.length].img;
+	slides[3].src = items[(counter + 3) % items.length].img;
 }

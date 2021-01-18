@@ -1,18 +1,28 @@
-.container {
-	display:flex;
-	flex-direction: row;
-
+body{
+	margin: 0px;
+	padding: 0px;
 }
-.leftBar{
-	width: 300px;
-	background-color: grey;
-	margin-right: 40px;
+.farmers-container {
+background-color: lightgrey;
+}
+.search-container{
+	padding-top: 10px;
+	margin: 15px;
+}
+#farmers-search{
+	font-size: 15px;
+}
+#farmer-search-button{
+	background-color: #637a94;
+	border: none;
+	outline: none;
+	font-size: 15px;
 }
 .avatarList {
-	background-color: lightgrey;
+	padding: 5px;
 	display:flex;
 	justify-content: flex-start;
-	padding-top : 50px;
+	
 	flex-wrap: wrap;
 }
 
@@ -21,6 +31,7 @@
 	width: 300px;
 	text-align: center;
 	margin: 10px;
+
 	cursor: pointer;
 }
 
@@ -37,7 +48,7 @@ h4 {
 }
 
 .info:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 
 
