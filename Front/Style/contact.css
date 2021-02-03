@@ -1,3 +1,4 @@
+
 #contact-cont{
 	padding: 30px;	
 	display: flex;
@@ -53,4 +54,8 @@
 }
 #send-button:hover{
 	opacity: 1;
+}
+
+#message-sent{
+	display: none;
 }

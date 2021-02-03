@@ -1,11 +1,15 @@
 * {
 	box-sizing: border-box;
 }
+
 body{
 	padding: 0px;
 	margin: 0px;
 	background-color: #f1f1f1;
 	font-family: 'Raleway', sans-serif;
+}
+.number{
+	font-family: 'sans-serif', sans-serif !important;
 }
 
 /*TOP */
@@ -42,6 +46,20 @@ body{
 }
 
 
+#go-up{
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	background-color: red;
+	border-radius: 5px;
+	outline: none;
+	text-decoration: none;
+	padding-left:12px;
+	padding-top: 12px;
+	color: white;
+}
 /*Mid */
 .mid-container{
 	margin: auto;
@@ -70,7 +88,7 @@ body{
 /*Bot */
 .feature-container{
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 80px;
 	padding: 10px;
 	width: 1200px;
 	background-color:#6c7a8b;

@@ -2,17 +2,20 @@ body{
 	margin: 0px;
 	padding: 0px;
 }
-.farmers-container {
+.people-container {
 background-color: lightgrey;
 }
 .search-container{
 	padding-top: 10px;
 	margin: 15px;
 }
-#farmers-search{
+.people-search{
 	font-size: 15px;
 }
-#farmer-search-button{
+.people-search::placeholder{
+	font-size: 0.9rem;
+}
+#people-search-button{
 	background-color: #637a94;
 	border: none;
 	outline: none;
@@ -41,7 +44,7 @@ background-color: lightgrey;
 
 }
 
-h4 {
+.personName {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	color : black;

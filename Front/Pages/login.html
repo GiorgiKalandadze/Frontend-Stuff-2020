@@ -13,53 +13,55 @@
 
 <body>
   <header class="navbarContainer">
-    <h3 id="companyName">FarmVille</h3>
+    <button id="home-button">AgroNet</button>
+    <!-- <h3 id="companyName">AgroNet</h3> -->
     <div id="rightSide">
       <nav>
         <ul class="nav_links">
-          <li class="navElem"><a class="navTitle" href="#">Main</a></li>
-          <li class="navElem"><a class="navTitle" href="#">Companies</a></li>
-          <li class="navElem"><a class="navTitle" href="#">Farmers</a></li>
-          <li class="navElem"><a class="navTitle" href="#">About Us</a></li>
-          <li class="navElem"><a class="navTitle" href="#">Contact</a></li>
-
+          <li class="navElem"><button id="header-nav-main" class="navTitle">Main</button></li>
+          <li class="navElem"><button id="header-nav-companies" class="navTitle">Companies</button></li>
+          <li class="navElem"><button id="header-nav-farmers" class="navTitle">Farmers</button></li>
+          <li class="navElem"><button id="header-nav-trade" class="navTitle">Trade</button></li>
+          <li class="navElem"><button id="header-nav-about" class="navTitle">About Us</button></li>
+          <li class="navElem"><button id="header-nav-contact" class="navTitle">Contact</button></li>
         </ul>
       </nav>
-      <a class="navTitle" href="#"><button id="loginButton">Login</button></a>
+      <button id="login-button">Login</button>
     </div>
   </header>
 
 	<div class="login-container">
-		<img id="loginBackImg" src="../Images/Login/log.svg">
-		<div class="loginBox">
-			<form class="loginForm"action="" method="GET">
-				<img src="../Images/Login/profile2.png" class="avatar">
-				<h2>Welcome</h2>
-				<div class="inputBox first">
-					<div class="i">
-						<i class="fas fa-user"></i>
-					</div>
-					<div>
-						<input class="input" id="username-input" name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
+    <img id="loginBackImg" src="../Images/Login/log.svg">
+    <div class="loginBox">
+      <div class="loginForm">
+        <img src="../Images/Login/profile2.png" class="avatar">
+        <h2>Welcome</h2>
+        <h5 id="wrong-login">Wrong username or password</h5>
+        <div class="inputBox first">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div>
+            <input class="input" id="username-input" name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
 
-					</div>
-				</div>	
-				<div class="inputBox second">
-					<div class="i">
-						<i class="fas fa-lock"></i>
-					</div>
-					<div>
-						<input class="input" id="password-input"  name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
-						
-					</div>
-				</div>	
+          </div>
+        </div>  
+        <div class="inputBox second">
+          <div class="i">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div>
+            <input class="input" id="password-input" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
+            
+          </div>
+        </div>  
 
-				<a id="forgot"href="#">Forgot Password?</a>
-				<input type="submit" id="loginFormButton" value="Login">
+        <a id="forgot"href="#">Forgot Password?</a>
+        <button id="loginFormButton">Login</button>
 
-			</form>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>`
 
 
 	<footer class="footerContainer">

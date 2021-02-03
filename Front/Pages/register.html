@@ -12,67 +12,54 @@
 </head>	
 
 <body>
-	<header class="navbarContainer">
-    <h3 id="companyName">FarmVille</h3>
-    <div id="rightSide">
-      <nav>
-        <ul class="nav_links">
-          <li class="navElem"><a class="navTitle" href="#">Main</a></li>
-          <li class="navElem"><a class="navTitle" href="#">Companies</a></li>
-          <li class="navElem"><a class="navTitle" href="#">Farmers</a></li>
-          <li class="navElem"><a class="navTitle" href="#">About Us</a></li>
-          <li class="navElem"><a class="navTitle" href="#">Contact</a></li>
-
-        </ul>
-      </nav>
-      <a class="navTitle" href="#"><button id="loginButton">Login</button></a>
-    </div>
+  <header class="navbarContainer">
+    <button id="home-button">AgroNet</button>
+      <div id="rightSide">
+        <nav>
+          <ul class="nav_links">
+            <li class="navElem"><button id="header-nav-main" class="navTitle">Main</button></li>
+            <li class="navElem"><button id="header-nav-groups" class="navTitle">Groups</button></li>
+            <li class="navElem"><button id="header-nav-farmers" class="navTitle">Farmers</button></li>
+            <li class="navElem"><button id="header-nav-trade" class="navTitle">Trade</button></li>
+            <li class="navElem"><button id="header-nav-about" class="navTitle">About Us</button></li>
+            <li class="navElem"><button id="header-nav-contact" class="navTitle">Contact</button></li>
+          </ul>
+        </nav>
+        <button id="login-button">Login</button>  
+      </div>
   </header>
 
 	<div class="register-container">
 		<div class="registerBox">
-			<form class="registerForm"action="" method="GET">
+			<div class="registerForm">
 				<h2 class="registerFormTitle">Sign up</h2>
+        <h5 id="register-alert">Username taken</h5>
 				<div class="inputBox first">
 					<div class="i">
-						<i class="fas fa-user"></i>
+						<i class="fas fa-user registerI"></i>
 					</div>
 					<div>
-						<input class="input" name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
+						<input class="input-register" id="username-input-reg"name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
 					</div>
 				</div>	
 				<div class="inputBox third">
 					<div class="i">
-						<i class="fas fa-envelope-square"></i>
+						<i class="fas fa-envelope-square registerI"></i>
 					</div>
 					<div>
-						<input class="input" name="email" type="text" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'">			
+						<input class="input-register" id="password-input-reg" name="email" type="text" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'">			
 					</div>
 				</div>	
 				<div class="inputBox second">
 					<div class="i">
-						<i class="fas fa-lock"></i>
+						<i class="fas fa-lock registerI"></i>
 					</div>
 					<div>
-						<input class="input" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">	
+						<input class="input-register" id="email-input-reg" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">	
 					</div>
-				</div>	
-				<div class="inputBox fourth">
-					<div class="i">
-						<i class="fas fa-id-badge"></i>
-					</div>
-						<select class="registerStatus">
-							<option value="Status" selected="selected" class="initial">Status:</option>
-							<option value="Farmer">Farmer</option>
-							<option value="Company">Company</option>
-							<option value="Agro-Expert">Agro-Expert</option>
-							<option value="Agro-Journalist">Agro-Journalist</option>
-							<option value="Volunteer">Volunteer</option>
-						</select>
-					
 				</div>		
-				<input type="submit" class="btn" value="Sign Up">
-			</form>
+				<button id="register-button">Sign Up</button>
+			</div>
 		</div>
 		<img id="registerBackImg"src="../Images/Register/reg.png">
 	</div>
@@ -90,7 +77,7 @@
 
       <div class="column Second">
         <ul>
-          <li class="footer-li">032(2)2739212</li>
+          <li class="footer-li number">032(2)2739212</li>
           <li class="footer-li">info@agronet.com</li>
           <li class="footer-li">David Agmashenebeli 27a</li>
         </ul>
@@ -108,14 +95,11 @@
     </div>
     <hr class="footer-hr">
     <div class="footerSecondRow">
-    	<img src="../Images/gita.png" class="footer-logo">
-    	<img src="../Images/btu.png" class="footer-logo">
-    	<!-- <img src="../Images/logo1.svg" class="footer-logo">
-    	<img src="../Images/logo2.jpg" class="footer-logo"> -->
-
+      <img src="../Images/Footer/gita.png" class="footer-logo">
+      <img src="../Images/Footer/logo1.svg" class="footer-logo">
     </div>
     <div class="footerThirdRow">
-    	<p>©2020 FarmWeb — All rights reserved</p>
+      <p>©2021 AgroNet — All rights reserved</p>
     </div>
   </footer>
 </body>

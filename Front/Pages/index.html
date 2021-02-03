@@ -4,7 +4,7 @@
  	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
  	<title>AgroNet</title>
   
-  	<link rel="stylesheet" type="text/css" href="../Style/start.css">
+  	<link rel="stylesheet" type="text/css" href="../Style/index.css">
 	<link rel="stylesheet" type="text/css" href="../Style/header.css">
 	<link rel="stylesheet" type="text/css" href="../Style/footer.css">
 	<link rel="stylesheet" type="text/css" href="../Style/register.css">
@@ -16,37 +16,38 @@
 	<link rel="stylesheet" type="text/css" href="../Style/list.css">
 	<link rel="stylesheet" type="text/css" href="../Style/trade.css">
 	<link rel="stylesheet" type="text/css" href="../Style/about.css">
-	<script src="../Script/start.js"></script>
+	<script src="../Script/index.js"></script>
+	
 
  	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
  	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">	
+	
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">	
 
 </head>	
 
 <body>
-	<header class="navbarContainer">
-	    <button id="home-button">AgroNet</button>
-	    <!-- <h3 id="companyName">AgroNet</h3> -->
+	<header id="header-id" class="navbarContainer">
+		<button id="home-button">AgroNet</button>
 	    <div id="rightSide">
-	     	<nav>
-	        	<ul class="nav_links">
-		          	<li class="navElem"><button id="header-nav-main" class="navTitle">Main</button></li>
-		          	<li class="navElem"><button id="header-nav-groups" class="navTitle">Groups</button></li>
-		          	<li class="navElem"><button id="header-nav-farmers" class="navTitle">Farmers</button></li>
-		          	<li class="navElem"><button id="header-nav-trade" class="navTitle">Trade</button></li>
-		          	<li class="navElem"><button id="header-nav-about" class="navTitle">About Us</button></li>
-		          	<li class="navElem"><button id="header-nav-contact" class="navTitle">Contact</button></li>
-	        	</ul>
-	      	</nav>
-	     	<button id="login-button">Login</button>	
+	      <nav>
+	        <ul class="nav_links">
+	          <li class="navElem"><button id="header-nav-main" class="navTitle">Main</button></li>
+	          <li class="navElem"><button id="header-nav-groups" class="navTitle">Groups</button></li>
+	          <li class="navElem"><button id="header-nav-people" class="navTitle">People</button></li>
+	          <li class="navElem"><button id="header-nav-trade" class="navTitle">Trade</button></li>
+	          <li class="navElem"><button id="header-nav-about" class="navTitle">About Us</button></li>
+	          <li class="navElem"><button id="header-nav-contact" class="navTitle">Contact</button></li>
+	        </ul>
+	      </nav>
+	      <button id="login-button">Login</button>  
 	    </div>
-  	</header>
+	</header>
 
+	<a id="go-up" href="#header-id"><lable>Top</lable></a>
   	
-  	<div class="main-content">
+  	<div id="main-cont" class="main-content">
   	<div class="top-row">
   		<div class="welcome">
 		  	<h1>Adding Green to your Life</h1>
@@ -148,7 +149,7 @@
 
       <div class="column Second">
         <ul>
-          <li class="footer-li">032(2)2739212</li>
+          <li class="footer-li number">032(2)2739212</li>
           <li class="footer-li">info@agronet.com</li>
           <li class="footer-li">David Agmashenebeli 27a</li>
         </ul>
@@ -156,10 +157,11 @@
 
       <div class="column Third">
         <ul>
-          <li class="footer-li">Facebook</li>
-          <li class="footer-li">Instagram</li>
+
+          <li class="footer-li"><a href="https://www.facebook.com/FreeUni/">Facebook</a></li>
+          <li class="footer-li"><a href="https://www.instagram.com/freeuni.edu.ge/">Instagram</a></li>
           <li class="footer-li">Twitter</li>
-          <li class="footer-li">Linkedin</li>
+          <li class="footer-li"><a href="https://www.linkedin.com/school/free-university-of-tbilisi/">Linkedin</a></li>
         </ul>
       </div>
 
@@ -167,17 +169,23 @@
     <hr class="footer-hr">
     <div class="footerSecondRow">
     	<img src="../Images/Footer/gita.png" class="footer-logo">
-    	<img src="../Images/Footer/btu.png" class="footer-logo">
-    	<!-- <img src="../Images/logo1.svg" class="footer-logo">
-    	<img src="../Images/logo2.jpg" class="footer-logo">  -->
-
+    	<img src="../Images/Footer/logo1.svg" class="footer-logo">
     </div>
     <div class="footerThirdRow">
-    	<p>©2021 FarmWeb — All rights reserved</p>
+    	<p>©2021 AgroNet — All rights reserved</p>
     </div>
   </footer>
 
 
+
+  <script src="../Base/users.js"></script>
+  <script src="../Base/profiles.js"></script>
+  <script src="../Base/groupsBase.js"></script>
+
+  <script src="../Script/Handle/login&register.js"></script>
+  <script src="../Script/Handle/contact.js"></script>
+  <script src="../Script/Handle/profile.js"></script>
+  <script src="../Script/Handle/groups.js"></script>
 
 	
 </body>

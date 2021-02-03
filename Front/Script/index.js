@@ -13,6 +13,7 @@ document.addEventListener('click', function (e){
 			document.getElementsByClassName('main-content')[0].innerHTML = loginHTML;
 		} else {
 			document.getElementsByClassName('main-content')[0].innerHTML = profileHTML;
+			loadProfile(loggedID - 1);
 		}
 	}
 	if(e.target.id == 'header-nav-main'){
@@ -28,9 +29,9 @@ document.addEventListener('click', function (e){
 		document.getElementsByClassName('main-content')[0].innerHTML = groupsListHTML;
 		loadGroups();
 	}
-	if(e.target.id == 'header-nav-farmers'){
+	if(e.target.id == 'header-nav-people'){
 		document.getElementsByClassName('main-content')[0].innerHTML = peopleListHTML;
-		loadFarmers();
+		loadPeople();
 	}
 	if(e.target.id == 'header-nav-trade'){
 		document.getElementsByClassName('main-content')[0].innerHTML = tradeHTML;
@@ -61,26 +62,19 @@ var aboutHTML =
       <div class="team">
           <div class="member">
             <div class="member-img-div">
-              <img id="ap" class="member-img" src="../Images/People/apa.jpg">
+              <img id="ap" class="member-img" src="../Images/People/tristan.jpg">
             </div>
-            <h3 class="member-name">Luka Apkhaidze</h3>
-            <h5 class="member-occupation">Economist</h5>
+            <h3 class="member-name">Tristan Harris</h3>
+            <h5 class="member-occupation">Computer Scientist</h5>
             <button class="member-contact">Contact</button>
           </div>
+          
           <div class="member">
             <div class="member-img-div">
-              <img id="bara" class="member-img" src="../Images/People/bara.jpg">
+              <img id="geta" class="member-img" src="../Images/People/cv.jpg">
             </div>
-            <h3 class="member-name">Giorgi Baramidze</h3>
-            <h5 class="member-occupation">Business administration</h5>
-            <button class="member-contact">Contact</button>
-          </div>
-          <div class="member">
-            <div class="member-img-div">
-              <img id="geta" class="member-img" src="../Images/People/geta.jpg">
-            </div>
-            <h3 class="member-name">Irakli Getashvili</h3>
-            <h5 class="member-occupation">Social Media Manager</h5>
+            <h3 class="member-name">Giorgi Kalandadze</h3>
+            <h5 class="member-occupation">Software Developer</h5>
             <button class="member-contact">Contact</button>
           </div>
       </div>
@@ -175,61 +169,50 @@ var startHTML = `<div class="top-row">
 	</div>`
 
 //Register
-var registerHTML = `<div class="register-container">
+var registerHTML = 
+`
+<div class="register-container">
 		<div class="registerBox">
-			<form class="registerForm"action="" method="GET">
+			<div class="registerForm">
 				<h2 class="registerFormTitle">Sign up</h2>
-				<h5 id="register-alert">Register alert</h5>
+				<h5 id="register-alert">Username taken</h5>
 				<div class="inputBox first">
 					<div class="i">
-						<i class="fas fa-user"></i>
+						<i class="fas fa-user registerI"></i>
 					</div>
 					<div>
-						<input class="input" id="username-input-reg" name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
+						<input class="input-register" id="username-input-reg"name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
 					</div>
 				</div>	
 				<div class="inputBox third">
 					<div class="i">
-						<i class="fas fa-envelope-square"></i>
+						<i class="fas fa-envelope-square registerI"></i>
 					</div>
 					<div>
-						<input class="input" id="email-input-reg" name="email" type="text" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'">			
+						<input class="input-register" id="password-input-reg" name="email" type="text" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'">			
 					</div>
 				</div>	
 				<div class="inputBox second">
 					<div class="i">
-						<i class="fas fa-lock"></i>
+						<i class="fas fa-lock registerI"></i>
 					</div>
 					<div>
-						<input class="input" id="password-input-reg" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">	
+						<input class="input-register" id="email-input-reg" name="password" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">	
 					</div>
-				</div>	
-				<div class="inputBox fourth">
-					<div class="i">
-						<i class="fas fa-id-badge"></i>
-					</div>
-						<select id="status-input-reg" class="registerStatus">
-							<option value="Status" selected="selected" class="initial">Status:</option>
-							<option value="Farmer">Farmer</option>
-							<option value="Company">Company</option>
-							<option value="Agro-Expert">Agro-Expert</option>
-							<option value="Agro-Journalist">Agro-Journalist</option>
-							<option value="Volunteer">Volunteer</option>
-						</select>
-					
 				</div>		
-				<input type="submit" id="register-button" class="btn" value="Sign Up">
-			</form>
+				<button id="register-button">Sign Up</button>
+			</div>
 		</div>
 		<img id="registerBackImg"src="../Images/Register/reg.png">
-	</div>`
+	</div>
+`
 
 
 //Login
 var loginHTML = `<div class="login-container">
 		<img id="loginBackImg" src="../Images/Login/log.svg">
 		<div class="loginBox">
-			<form class="loginForm"action="" method="GET">
+			<div class="loginForm">
 				<img src="../Images/Login/profile2.png" class="avatar">
 				<h2>Welcome</h2>
 				<h5 id="wrong-login">Wrong username or password</h5>
@@ -255,7 +238,7 @@ var loginHTML = `<div class="login-container">
 				<a id="forgot"href="#">Forgot Password?</a>
 				<input type="submit" id="loginFormButton" value="Login">
 
-			</form>
+			</div>
 		</div>
 	</div>`
 
@@ -402,24 +385,24 @@ var mainHTML = `<div id="main-feed-cont">
 var profileHTML = `<div class="biggest">
   <div id="container">
     <div id="left-box">
-      <img id="profile-img" src="../Images/People/farmer0M.jpg" style="width: 100%">
+      <img id="profile-left-img" src="">
       <div id="info">
-        <h3>Giorgi Beridze</h3>
+        <h3 id="profile-name"></h3>
         <p>
           <i class="fas fa-briefcase"></i>
-          Farmer
+          <label id="profile-occupation"></label>
         </p>
         <p>
           <i class="fas fa-home"></i>
-          Kvareli,GEO
+          <label id="profile-location"></label>
         </p>
         <p>
           <i class="fas fa-envelope"></i>
-          giorgi_beridze@gmail.com
+          <label id="profile-email"></label>
         </p>
         <p>
           <i class="fas fa-phone-alt"></i>
-          +995503875695
+          <label id="profile-phone"></label>
         </p>
         
         <!-- <footer class="social-footer">
@@ -443,50 +426,11 @@ var profileHTML = `<div class="biggest">
     </div>
     
     <div id="right-box">
-      
-     <div class="experience">
-        <h2><i class="mm fas fa-suitcase"></i>Work Experience</h2>
-        <div class="work-box">
-          <h4>Front end Developer</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2015 - Present
-          </p>
-          <h5>Ut a metus bibendum, venenatis ex non, bibendum ligula. Suspendisse convallis venenatis ultricies. Donec eu massa a lectus lacinia egestas. Curabitur a lacus sed sem convallis ultricies at eu orci.</h5>
-        </div>
-        <hr>
-        <div class="work-box">
-          <h4>Software Developer</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2007 - 2015
-          </p>
-          <h5>Ut a metus bibendum, venenatis ex non, bibendum ligula. Suspendisse convallis venenatis ultricies. Donec eu massa a lectus lacinia egestas. Curabitur a lacus sed sem convallis ultricies at eu orci.</h5>
-        </div>
-    
+     <div class="experience" id="experience-work">
+        <h2><i class="mm fas fa-suitcase"></i>Work Experience</h2> 
       </div>
-
-      <div class="experience">
+      <div class="experience" id="experience-education">
         <h2><i class="mm fas fa-graduation-cap"></i>Education</h2>
-
-        <div class="education-box">
-          <h4>42 Public School</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2015 - Present
-          </p>
-          <h5>UNam volutpat velit eu elit malesuada, vel fringilla est ullamcorper. Curabitur accumsan mauris ex, eu feugiat erat venenatis sed. Vivamus vel quam tortor.</h5>
-        </div>
-        <hr>
-        <div class="education-box">
-          <h4>Buckswood School Tbilisi</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2010 - 2014
-          </p>
-          <h5>Curabitur eget nisl tincidunt, congue lectus sed, dictum leo. Etiam viverra diam sed condimentum efficitur.</h5>
-        </div>
-        
       </div> 
     </div>  
   </div>
@@ -589,11 +533,15 @@ var contactHTML = `<div id="contact-cont">
 					  	<textarea class="contact-input text" name="text"></textarea> 
 				  	</div>
 				  	<div class="contact-row">
-				  	<button id="send-button">Send</button>
+				  	<button id="contact-send-button">Send</button>
 				  	</div>
 			  	</div>
   		</div>
-
+  		<div id="message-sent">
+		  		<p id="message-sent-alert">
+		  			Your message has been submitted. We will answer you within 24 hours.
+		  		</p>
+		</div>
 		<div id="contact-right">
 		  		<div id="map">
 		  		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.6461618650137!2d44.73647295042225!3d41.70657368400889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447344e8047ced%3A0xb53d8ecd4495903f!2sBusiness%20and%20Technology%20University!5e0!3m2!1sen!2sge!4v1610695757399!5m2!1sen!2sge" width="800" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -607,11 +555,15 @@ var groupsListHTML =
 `<div class="group-cont">
 		<div class="group-left">
 			<div class="group-categorys">
-				<button id="birds" class="category">Birds</button>
-				<button id="animals"class="category">Animals</button>
-				<button id="fruit"class="category">Fruit</button>
-				<button id="vegetable"class="category">Vegetable</button>
-				<button id="tech"class="category">Technology</button>
+				<button id="Animals"class="category">Animals</button>
+				<button id="Birds" class="category">Birds</button>
+				<button id="Birds" class="category">Chemicals</button>
+				<button id="Birds" class="category">Equipment</button>
+				<button id="Fruit"class="category">Fruit</button>
+				<button id="Birds" class="category">Plants</button>
+				<button id="Birds" class="category">Seeds</button>
+				<button id="Vegetable"class="category">Vegetable</button>
+				<button id="Technology"class="category">Technology</button>
 			</div>	
 		</div>
 		<div class="group-right">
@@ -634,7 +586,6 @@ var groupinHTML =
 							<h5>2,560 Members</h5>
 						</div>
 						<div class='two-buttons'>
-							<button id="back">Back</button>
 							<button id="follow-group">Follow</button>
 							<button id="followed-group"><i class="fas fa-check"></i>Followed</button>
 						</div>
@@ -705,12 +656,15 @@ var groupinHTML =
 
 var peopleListHTML = 
 `
-	<div class="farmers-container">
+	<div class="people-container">
       <div class="search-container">
-        <input id='farmers-search'type="text" placeholder="Search.." name="search">
-        <button id="farmer-search-button" type="submit"><i class="fa fa-search"></i></button>
+        <input id='people-search-name'  class="people-search" "type="text" placeholder="Search by name" name="search">
+        <input id='people-search-occupation' class="people-search" "type="text" placeholder="Search by Occupation" name="search">
+        <!--
+        <button id="people-search-button" type="submit"><i class="fa fa-search"></i></button>
+        -->
 		  </div>
-		  <div class="avatarList" id='farmers-list'>
+		  <div class="avatarList" id='people-list'>
 		  </div>
     </div>
 `
@@ -729,104 +683,9 @@ var nav4 = '<h3>NAV5</h3>'
 
 
 
-
-
-var logged = false;
-var loggedID = 0;
-/*Login and Register*/
-var users = 
-[
-	{"username":"giorgi", "password": "giorgi123", "id":"0", 
-		"email":"giorgi@gmail.com", "status":"Farmer"},
-	{"username":"taso", "password": "taso123", "id":"1",
-		"email":"taso@gmail.com", "status":"Company"},
-	{"username":"dito", "password": "dito123", "id":"2",	
-		"email":"dito@gmail.com", "status":"Volunteer"},
-	{"username":"sandro", "password": "sandro123", "id":"3",
-		"email":"sandro@gmail.com", "status":"Agro-Expert"}
-]
-
-
-
-//Buttons
-document.addEventListener('click', function (e){
-	// e.preventDefault();
-	if(e.target.id == 'loginFormButton'){
-		var valid = checkUserLogin();
-		if(valid){
-			document.getElementById('login-button').innerHTML = document.getElementById("username-input").value;
-			document.getElementsByClassName('main-content')[0].innerHTML = mainHTML;
-			logged = true;
-			
-		} else {
-			document.getElementsByClassName('main-content')[0].innerHTML = loginHTML;
-			document.getElementById('wrong-login').style.visibility = "visible";
-		}
-	}
-
-	if(e.target.id == 'register-button'){
-		var exist = checkUserExist();
-		if(exist){
-			document.getElementById("register-alert").innerHTML = 'Username taken';
-			document.getElementById("register-alert").style.visibility = 'visible';
-		} else {
-			var username = document.getElementById("username-input-reg").value;
-			var password = document.getElementById("password-input-reg").value;
-			var email = document.getElementById("email-input-reg").value;
-			var status = document.getElementById("status-input-reg").value;
-
-			if(username == "" || password == "" || email == "" || status=="Status"){
-				document.getElementById("register-alert").style.visibility = 'visible';
-				document.getElementById("register-alert").innerHTML = 'Please fill all fields';
-			} else {
-				users.push({
-					"username": username, 
-					"password": password, "id":"?", 
-					"email": email, "status":status
-				}
-				)
-
-				document.getElementById("register-alert").innerHTML = "";
-				document.getElementById("register-alert").style.visibility = "hidden";
-				document.getElementsByClassName('main-content')[0].innerHTML = mainHTML;
-			}
-		}
-	}
-
-})
-
-
-function checkUserExist(){
-	var username = document.getElementById("username-input-reg").value;
-	for(i in users){
-		var user = users[i];
-		if(user.username == username){
-			return true;
-		}
-	}
-	return false;
-
-}
-function checkUserLogin(){
-	var username = document.getElementById("username-input").value;
-	var password = document.getElementById("password-input").value;
-
-	for(i in users){
-		var user = users[i];
-		if(user.username == username){
-			if(user.password == password){
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
 //Profile
 document.addEventListener('click', function (e){
-	if(e.target.id == "log-out"){
-		document.getElementsByClassName('main-content')[0].innerHTML = startHTML;
-	}
+	
 	if(e.target.id == "edit-profile"){
 		document.getElementById('right-box').innerHTML = editProfileHTML;
 		user = users[loggedID];
@@ -850,363 +709,65 @@ document.addEventListener('click', function (e){
 })
 
 //Groups List
-var groups = 
-[
-	{"name":"West Birds", "category": "bird", "id":"0", 
-		"img":"../Images/Group/birds1.png", 
-		"description":"Sed non purus nec mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. ",
-		"followers":"2,345"},
-	{"name":"Tech in Agro", "category": "tech", "id":"1", 
-		"img":"../Images/Group/tech1.jpg", 
-		"description":"Ut molestie sodales molestie. Praesent euismod turpis eu posuere elementum.Pellentesque ac eros eu urna tincidunt feugiat.  ",
-		"followers":"1,593"},
-	{"name":"Winter Fruit", "category": "fruit", "id":"2", 
-		"img":"../Images/Group/fruit1.jpeg", 
-		"description":"sodales ante eu tellus feugiat pulvinar. Nullam in velit felis. Phasellus blandit pretium lacus sit amet semper. ",
-		"followers":"3,153"},
-	{"name":"Asian Horses", "category": "animal", "id":"3", 
-		"img":"../Images/Group/animals2.jpg", 
-		"description":"Pellentesque ac eros eu urna tincidunt feugiat. Sed lacinia est et interdum efficitur. Curabitur eu consectetur libero, vitae maximus quam. ",
-		"followers":"6,784"},
-	{"name":"Mountain birds", "category": "bird", "id":"4", 
-		"img":"../Images/Group/birds2.jpg", 
-		"description":"Phasellus ac ligula eu elit tincidunt congue. Mauris vitae orci porta, blandit massa eu, malesuada neque.",
-		"followers":"897"},
-	{"name":"west birds", "category": "bird", "id":"5", 
-		"img":"../Images/Group/birds3.jpeg", 
-		"description":"Sed non purus nec mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. ",
-		"followers":"2,345"},
-]
-document.addEventListener('click', function (e){
-	// e.preventDefault();
-	if(e.target.id == 'birds'){
-		filterGroups(e, 'group bird');
-	}
-	if(e.target.id == 'animals'){
-		filterGroups(e, 'group animal');
-	}
-	if(e.target.id == 'fruit'){
-		filterGroups(e, 'group fruit');
-	}
-	if(e.target.id == 'vegetable'){
-		filterGroups(e, 'group vegetable');
-	}
-	if(e.target.id == 'tech'){
-		filterGroups(e, 'group tech');
-	}
-	if(e.target.id == 'back'){
-		document.getElementsByClassName('group-cont')[0].innerHTML = groupsListHTML;
-		loadGroups();
-		checked = 0;
-	}
-	if(e.target.id == 'follow-group'){
-		document.getElementById('follow-group').style.display = 'none';
-		document.getElementById('followed-group').style.display = 'block';
-		
-	}
-	if(e.target.id == 'followed-group'){
-		document.getElementById('followed-group').style.display = 'none';
-		document.getElementById('follow-group').style.display = 'block';
-	}
-	if(e.target.className == 'groupImg'){
-		document.getElementsByClassName('group-right')[0].innerHTML = groupinHTML;
-		var src = '';
-		for(i = 0; i < groups.length; i++){
-			if(groups[i].id == e.target.id){
-				src = groups[i].img;
-			}
-		}
-		
-		document.getElementsByClassName('group-background-img')[0].src = src;
-	}
-	if(e.target.className == 'listAvatar'){
-		document.getElementsByClassName('main-content')[0].innerHTML = profileHTML;
-		document.getElementsByClassName('profile-left-button')[0].style.visibility = 'hidden';
-		document.getElementsByClassName('profile-left-button')[1].style.visibility = 'hidden';
-		var src = '';
-		for(i = 0; i < farmers.length; i++){
-			if(farmers[i].id == e.target.id){
-				src = farmers[i].img;
-			}
-		}
-		
-		document.getElementById('profile-img').src = src;
-	}
-	
-})
-var checked = 0;
 
-function displayAllGroups(){
-	var buttons = document.getElementsByClassName("category");	
-	for(j = 0; j < buttons.length; j++){
-		buttons[j].style.backgroundColor='white';
-		buttons[j].style.color='black';
-		buttons[j].style.display='block';
-	}
-	var groups = document.getElementsByClassName("group");
-	for(i = 0; i < groups.length; i++){
-		groups[i].style.display = "block";
-	}
-}
-function removeAllGroups(){
-	var groups = document.getElementsByClassName("group");
-	for(i = 0; i < groups.length; i++){
-		groups[i].style.display = "none";
-	}
-}
-
-function filterGroups(e, type){
-	var elem = document.getElementById(e.target.id);
-	
-	var st = window.getComputedStyle(elem, null);
-
-	if(checked == 0){
-		removeAllGroups();
-	}
-	var groups = document.getElementsByClassName(type);
-	
-	if(st.backgroundColor == 'rgb(255, 255, 255)'){
-		
-		checked += 1;
-		for(i = 0; i < groups.length; i++){
-			groups[i].style.display = 'block';
-			
-		}
-		e.target.style.backgroundColor = '#536272';
-		e.target.style.color = 'white';
-		
-	} else {
-		
-		checked -= 1;
-		if(checked == 0){
-			displayAllGroups();
-		} else {
-			for(i = 0; i < groups.length; i++){
-				groups[i].style.display = 'none';
-				
-			}
-			e.target.style.backgroundColor = 'white';
-			e.target.style.color = 'black';
-		}
-	}
-}
-
-function loadGroups(){
-
-	for(i = 0; i < groups.length; i++){
-		var group = groups[i];
-		var div = document.createElement('div');
-		div.className = 'group ' + group.category;
-		var img = document.createElement('img');
-		img.src = group.img;
-		img.className = 'groupImg';
-		img.id = group.id;
-		var h3 = document.createElement('h3');
-		h3.className = 'groupTitle';
-		h3.innerHTML  = group.name;
-		
-		var p = document.createElement('p');
-		p.innerHTML = group.description;
-		p.className = 'groupDescription';
-		div.appendChild(img);
-		div.appendChild(h3);
-		
-		div.appendChild(p);
-		document.getElementsByClassName('group-list')[0].appendChild(div);
-
-	}
-}
 
 /*Peope, farmers */
-var farmers = 
-[
-	{"name":"Aidan Butler", 'gender':'male', 'profession':'Soil and plant scientist', 
-		'img':'../Images/People/farmer0M.jpg', 'id':'0'},
-	{"name":"Olive Peterson", 'fegender':'female', 'profession':'Farmer', 
-		'img':'../Images/People/farmer3F.jpg', 'id':'1'},
-	{"name":"Aaron Jenkins", 'gender':'male', 'profession':'Agricultural economist', 
-		'img':'../Images/People/farmer1M.jpg', 'id':'2'},
-	{"name":"Joey Cox", 'gender':'male', 'profession':'Conservation planner', 
-		'img':'../Images/People/farmer2M.jpg', 'id':'3'},
-	{"name":"Luna Evans", 'gender':'female', 'profession':'Farmer', 
-		'img':'../Images/People/farmer4F.jpg', 'id':'4'},
-	{"name":"Valentina Flores", 'gender':'female', 'profession':'Agricultural salesperson ', 
-		'img':'../Images/People/farmer5F.jpg', 'id':'5'},
-	{"name":"Martin Murray", 'gender':'male', 'profession':'Farmer', 
-		'img':'../Images/People/farmer6M.jpg', 'id':'6'},
-	{"name":"Angelina Everly", 'gender':'mfeale', 'profession':'Agricultural Expert', 
-		'img':'../Images/People/farmer7F.jpg', 'id':'7'},
-]
-
-function loadFarmers(){
-	for(i = 0; i < farmers.length; i++){
-		var farmer = farmers[i];
+function loadPeople(){
+	for(i in profiles){
+		person = profiles[i];
+		var farmer = person[i];
 		var div = document.createElement('div');
 		div.className = 'info';
 		var img = document.createElement('img');
 		img.className = 'listAvatar';
-		img.src  = farmer.img;
-		img.id = farmer.id;
+		img.src  = "../Images/People/" + person.img;
+		img.id = person.id;
 		var name = document.createElement('h4');
-		name.innerHTML = farmer.name;
-		var profession = document.createElement('h4');
-		profession.innerHTML = farmer.profession;
+		name.className = "personName";
+		name.id = "personNameID";
+		name.innerHTML = person.name + " " + person.surname;
+		var occupation = document.createElement('h4');
+		occupation.className = "occupation";
+		occupation.innerHTML = person.occupation;
 		div.appendChild(img);
 		div.appendChild(name);
-		div.appendChild(profession);
-		document.getElementById('farmers-list').appendChild(div);
+		div.appendChild(occupation);
+		document.getElementById('people-list').appendChild(div);
 	}
 }
-
-
-
-
-
-//Trade, Items, Item info  ///////////////////////////////////////////////////////////////////////////////////
-var checkedCounter = 0;
-
-function displayAllItems(){
-	var itemsArr = document.getElementsByClassName("trade-item");
-	for(i = 0; i < itemsArr.length; i++){
-		itemsArr[i].style.display = "block";
+document.addEventListener('keyup', function(e){
+	if(e.target.className == 'people-search'){	
+		filterPeople(document.getElementById('people-search-name').value, document.getElementById('people-search-occupation').value);
 	}
-}
-function removeAllItems(){
-	var itemsArr = document.getElementsByClassName("trade-item");
-	for(i = 0; i < itemsArr.length; i++){
-		itemsArr[i].style.display = "none";
-	}
-}
+});
 
-function filterItems(e){
-	if(checkedCounter == 0){
-		removeAllItems();
-	}
-	var itemsArr = document.getElementsByClassName('trade-item');
-	var splitted = e.target.className.split("-");
-	var filter = splitted[1];
-	var elem = splitted[2];
-	var checked = document.getElementsByClassName(e.target.className)[0].checked;
-	
-	if(checked){
-		checkedCounter += 1;
-		for(i = 0; i < itemsArr.length; i++){
-			var item = itemsArr[i];
-			
-			if(item.getElementsByClassName('item-' + filter)[0].innerHTML == elem){
-				item.style.display = 'block';
-			} 	
-		}
-	} else {
-		checkedCounter -= 1;
-		if(checkedCounter == 0){
-			displayAllItems();
+//On page people filters people
+function filterPeople(searchValue1, searchValue2){
+	var divs = document.getElementsByClassName('info');
+	for(i=0; i < divs.length; i++){
+		var currDiv = divs[i];
+		var currName = currDiv.getElementsByClassName('personName')[0].innerHTML;
+		var currOccu = currDiv.getElementsByClassName('occupation')[0].innerHTML;
+		if(currName.toUpperCase().indexOf(searchValue1.toUpperCase()) > -1 && 
+			currOccu.toUpperCase().indexOf(searchValue2.toUpperCase()) > -1){
+			currDiv.style.display = "";
+			console.log('1');
 		} else {
-			for(i = 0; i < itemsArr.length; i++){
-			var item = itemsArr[i];
-			
-			if(item.getElementsByClassName('item-' + filter)[0].innerHTML == elem){
-				item.style.display = 'none';
-			} 	
-		}
+			console.log('2');
+			currDiv.style.display = "none";
 		}
 	}
-	
-}
-
-document.addEventListener('click', function (e){
-	//e.preventDefault();
-	if(e.target.className == 'item-img'){
-		document.getElementsByClassName('trade-right')[0].innerHTML = itemInHTML;
-		loadItemIn(e);
-	}
-	if(e.target.className.includes("trade", 0)){
-		filterItems(e);
-	}
-	if(e.target.id == 'trade-in-back'){
-		document.getElementsByClassName('trade-right')[0].innerHTML = '';
-		loadItems();
-	}
-	
-})
-
-var items = 
-[
-	{"name":"Agro Tools", "type": "tools", "id":"0", 
-		"img":"../Images/Items/tools1.png", 
-		"description":"Sed non purus nec mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. ",
-		"price":"78$", "location":"Tbilisi", 'delivery':'Yes'},
-	{"name":"Agro Tools", "type": "tools", "id":"1", 
-		"img":"../Images/Items/tools2.jpg", 
-		"description":" mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. ",
-		"price":"85$", "location":"Kutaisi", 'delivery':'No'},
-	{"name":"Agro Tools", "type": "tools", "id":"2", 
-		"img":"../Images/Items/tools3.jpg", 
-		"description":"Scelerisque in dictum non consectetur a erat nam at lectus. ",
-		"price":"94$", "location":"Batumi", 'delivery':'Yes'},
-
-	{"name":"Tractor", "type": "transport", "id":"3", 
-		"img":"../Images/Items/tractor1.jpg", 
-		"description":"Arcu felis bibendum ut tristique et. Sed adipiscing diam donec adipiscing tristique. ",
-		"price":"4700$", "location":"Batumi", 'delivery':'No'},
-	{"name":"Tractor", "type": "transport", "id":"4", 
-		"img":"../Images/Items/tractor2.jpg", 
-		"description":"Semper feugiat nibh sed pulvinar proin. Habitant morbi tristique senectus et.",
-		"price":"7100$", "location":"Tbilisi", 'delivery':'No'},
-	{"name":"Tractor", "type": "transport", "id":"5", 
-		"img":"../Images/Items/tractor3.jpg", 
-		"description":"Senectus et netus et malesuada. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. ",
-		"price":"10200$", "location":"Kutaisi", 'delivery':'No'},
-	{"name":"Tractor", "type": "transport", "id":"6", 
-		"img":"../Images/Items/tractor4.png", 
-		"description":"Tellus pellentesque eu tincidunt tortor. Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur.",
-		"price":"15700$", "location":"Tbilisi", 'delivery':'No'},
-]
-
-
-function loadItems(){
-	var d = document.createElement('div');
-	d.className = 'trade-list';
-	for(i = 0; i < items.length; i++){
-		var item = items[i];
-		var div = document.createElement('div');
-		div.className = 'trade-item';
-		var img = document.createElement('img');
-		img.src = item.img;
-		img.className = 'item-img';
-		img.id = item.id;
-		var h3 = document.createElement('h3');
-		h3.className = 'item-title';
-		h3.innerHTML  = item.name;
-		var type = document.createElement('p');
-		type.className ='item-type';
-		type.innerHTML = item.type;
-		var location = document.createElement('p');
-		location.className ='item-location';
-		location.innerHTML = item.location;
-		var p = document.createElement('p');
-		p.innerHTML = item.description;
-		p.className = 'item-description';
-		div.appendChild(img);
-		div.appendChild(h3);
-		div.appendChild(type);
-		div.appendChild(location);
-		div.appendChild(p);
-		d.appendChild(div);
-	}
-	document.getElementsByClassName('trade-right')[0].appendChild(d);
-	
 }
 
 
 
-// var slider = document.getElementById("price-ranger");
-// var output = document.getElementById("price-value");
-// output.innerHTML = slider.value; // Display the default slider value
-// // Update the current slider value (each time you drag the slider handle)
-// slider.oninput = function() {
-//   output.innerHTML = document.getElementById("price-ranger").value;
-// }
+
+
+
+
+
+
+
 
 
 
@@ -1337,50 +898,3 @@ var tradeHTML =
 	</div>
 `
 
-
-function loadItemIn(e){
-	var id = e.target.id;
-	var item = items[id];
-	document.getElementsByClassName('item-in-back-img')[0].src = item.img;
-	document.getElementById('item-in-name').innerHTML = item.name;
-	document.getElementById('item-in-price').innerHTML = item.price;
-	document.getElementById('item-in-location').innerHTML = item.location;
-	document.getElementsByClassName('trade-right')[0].style.height = '650px';
-	
-}
-
-
-//Vip slider ///////////////////////////////////////////////////////////////////////
-document.addEventListener('click', function (e){
-	
-	if(e.target.className == 'vip-slide'){
-		if(e.target.id == 'next'){
-			vipCounter += 1;
-		} else {
-			vipCounter -= 1;
-		}
-		changeSlide(vipCounter);
-	}
-	if(e.target.className == 'vip-img'){
-		document.getElementsByClassName('main-content')[0].innerHTML = tradeHTML;
-		loadItems();
-		document.getElementsByClassName('trade-right')[0].innerHTML = itemInHTML;
-		loadItemIn(e);
-
-	}
-});
-var vipCounter = 0;
-function changeSlide(counter){
-	if(counter < 0){
-		counter = items.length + counter;
-	}
-	if(counter >= items.length){
-		counter = counter % items.length;
-	}
-
-	var slides = document.getElementsByClassName('vip-img');
-	slides[0].src = items[counter].img;
-	slides[1].src = items[(counter + 1) % items.length].img;
-	slides[2].src = items[(counter + 2) % items.length].img;
-	slides[3].src = items[(counter + 3) % items.length].img;
-}

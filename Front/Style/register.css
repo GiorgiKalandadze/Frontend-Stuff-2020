@@ -1,6 +1,11 @@
+* {
+	box-sizing: border-box;
+}
 body{
-	margin:0px;
 	padding: 0px;
+	margin: 0px;
+	background-color: #f1f1f1;
+	font-family: 'Raleway', sans-serif;
 }
 .register-container{
     display: flex;
@@ -14,15 +19,15 @@ body{
 .registerBox{
 	text-align: center;
 	height : 500px;
-	
 }
 #register-alert{
 	color:red;
+	margin-top:10px;
 	margin-bottom: 0px;
 	visibility: hidden;
 }
 #registerBackImg{
-	margin-top: 100px;
+	
 	width : 600px;
 }
 .registerForm {
@@ -46,10 +51,10 @@ body{
 	border-bottom: 2px solid #d9d9d9; 
 }
 
-.i i {
+.registerI {
 	color:#637a94;
 }
-.input {
+.input-register {
 	width: 100%;
 	height: 100%;
 	border: none;
@@ -63,60 +68,23 @@ body{
 	font-size: 1.2rem;
 	color: #444;
 }
-.btn {
-	text-align: center;
+#register-button {
 	display: block;
 	width: 100%;
 	height: 50px;
 	border-radius: 25px;
 	margin: 1rem 0;
 	font-size: 1.2rem;
-	/*outline: none;*/
+	outline: none;
 	border: none;
 	background-color: #637a94;
 	opacity: 0.9;
 	cursor: pointer;
 	color: #fff;
 	background-size: 200%;
-	transition: .5s;
 	text-transform: uppercase;
 }
-.btn:hover{
+#register-button:hover{
 	opacity: 1;
 }
-.registerStatus {
-	padding: 0.5rem 0.7rem;
-	border:none;
-	width:30%;
-	background-color: white;
-	font-size: 1.2rem;
-	color: #444;
-}	
-.initial{
-	display:none;
-}
 
-
-
-/*Responsiveness*/
-
-@media screen and (max-width: 950px){
-	#registerBackImg{
-		border: 1px solid black;
-		display: none;
-	}
-
-	.registerBox{
-		max-width: 100%;
-		margin: auto;
-	}
-	
-	.registerForm{
-		border: 1px solid black;
-		margin: auto;
-		max-width: 100%; 
-	}
-	.container{
-		
-	}
-}

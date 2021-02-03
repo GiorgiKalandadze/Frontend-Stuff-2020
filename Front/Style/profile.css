@@ -25,7 +25,9 @@ body{
 	display: flex;
 	flex-direction: column;
 }
-
+#profile-left-img{
+	width: 100%;
+}
 #right-box{
 	width: 75%;
 	display: flex;
