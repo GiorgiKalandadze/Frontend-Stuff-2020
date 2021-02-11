@@ -2,6 +2,15 @@ body{
 	padding: 0px;
 	margin: 0px;
 }
+#hamburger-group{
+	display: none;
+	border: none;
+	outline: none;
+	background-color: red;
+}
+#closebtnGroup{
+	display: none;
+}
 .group-cont {
 	margin-top: 10px;
 	display: flex;
@@ -9,25 +18,23 @@ body{
 	background-color: white;
 }
 .group-right{
-	
 	width: 1000px;
 	display: flex;
 	align-items: space-around;
 	flex-direction: column;
 	background-color:  #637a94;
-
 }
+
 .group-list {
 	overflow-y: scroll;
 	height: 680px;
 	background-color:  #637a94;
-	
 	width: 1000px;
 	padding:10px;
 	padding-top: 3px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	
 	align-content: flex-start;
 	
 }
@@ -38,6 +45,7 @@ body{
 	margin-bottom: 20px;
 	background-color: white;
 	margin-right: 15px;
+	overflow: hidden;
 }
 .groupTitle{
 	margin-top: 0px;
@@ -127,9 +135,7 @@ body{
 	justify-content: space-between;
 
 }
-.qqq{
-	color:red;
-}
+
 #follow-group, #back, #followed-group{
 	outline: none;
 	text-decoration: none;
@@ -160,3 +166,109 @@ body{
 	color: black;
 }
 
+
+
+.group-post-cont{
+	/*border: 1px solid red;*/
+	margin: auto;
+	width: 600px;
+
+}
+#new-post-text-group{
+	border: none;
+	outline: none;
+}
+#new-post-group{
+	/*border: 1px solid blue;*/
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.group-posts{
+	/*border: 1px solid black;*/
+}
+.postButton{
+	outline: none;
+	text-decoration: none;
+	height : 30px;
+	width: 100px;
+	color: white;
+	border: none;
+	border-radius: 50px;
+	cursor:pointer;
+	text-transform: uppercase;
+	background-color: #F7882F;
+	opacity: 0.9;
+	margin: 2px;
+}
+
+
+@media screen and (max-width: 770px) {
+	.group-cont{
+		border: 2px solid green;
+		flex-direction: column;
+	}
+	#hamburger-group{
+		cursor: pointer;
+		color:white;
+		display: block;
+		width: 50%;
+		background-color: #536272;
+		align-self: center;
+		margin: 10px;
+	}
+	.group-left{
+		display: inline;
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #536272;
+		overflow-x: hidden;
+		transition: 0.5s;
+		text-align: center;
+		font-size: 0.5rem;
+		padding: 5px;
+	}
+	.category{
+		text-align: center;
+		font-size: 15px;
+	}
+	#closebtnGroup{
+		display: block;
+		position: absolute;
+	  	top: 5px;
+	  	right: 15px;
+	  	font-size: 60px;
+		background-color: #536272;
+		border: none;
+		outline: none;
+		color: white;
+	}
+	.group-right{
+		border: 2px solid red;
+		width: 100%;
+	}
+	.group-list{
+		border: 2px solid yellow;
+		width: 100%;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (max-width: 686px) {
+	.group{
+		width: 250px;
+	}
+}
+@media screen and (max-width: 580px) {
+	.group{
+		width: 300px;
+	}
+	.group-list{
+		
+		justify-content: center;
+	}
+}

@@ -24,8 +24,7 @@ background-color: lightgrey;
 .avatarList {
 	padding: 5px;
 	display:flex;
-	justify-content: flex-start;
-	
+	justify-content: space-around;
 	flex-wrap: wrap;
 }
 
@@ -69,3 +68,11 @@ background-color: lightgrey;
 	display: none;
 }
 
+
+
+
+@media screen and (max-width: 250px) {
+	.people-search{
+		width: 100%;
+	}
+}

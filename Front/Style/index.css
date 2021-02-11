@@ -3,7 +3,6 @@
 }
 
 body{
-	padding: 0px;
 	margin: 0px;
 	background-color: #f1f1f1;
 	font-family: 'Raleway', sans-serif;
@@ -12,6 +11,9 @@ body{
 	font-family: 'sans-serif', sans-serif !important;
 }
 
+#main-cont{
+	padding: 5px;
+}
 /*TOP */
 .top-row{
 	margin: auto;
@@ -135,6 +137,10 @@ body{
 	cursor: pointer;
 
 }
+.footer-link{
+	text-decoration: none;
+	color: white;
+}
 .footerFirstRow, .footerSecondRow{
 	color:white;
 }
@@ -149,4 +155,78 @@ body{
 }
 .footer-logo{
 	height: 100px;
+}
+
+
+#privacy-cont{
+	padding: 10px;
+}
+
+
+@media screen and (max-width: 770px) {
+	body{
+		border:1px solid red;
+		width: 100%;
+		padding: 5px;
+	}
+	#main-cont{
+		border:3px solid blue;
+		width: 100%;
+	}
+
+	/*Top Row*/
+	.top-row{
+		width: 100%;
+		flex-direction: column;
+		
+		/*border: 1px solid yellow;*/
+		
+	}
+	.welcome{
+		width: 100%;
+		/*border: 1px solid green;*/
+	}
+	.video{
+		/*border: 1px solid blue;*/
+		width: 100%;
+	}
+	.home-video{
+		/*border: 1px solid red;*/
+		width: 100%;
+	}
+	#join-button{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	/*Mid Container*/
+	.mid-container{
+		width: 100%;
+		/*border: 2px solid black;*/
+	}
+	.mid-text{
+		width: 100%;
+		/*border: 2px solid brown;*/
+	}
+	.fas.fa-search-location, .fas.fa-handshake{
+		display: none;
+	}
+
+	/*Feature Container*/
+	.feature-container{
+		/*border: 2px solid black;*/
+		width: 100%;
+	}
+	.features-row{
+		/*border: 2px solid red;*/
+		width: 100%;
+		flex-direction: column;
+	}
+	.feature-elem{
+		/*border: 2px solid blue;*/
+		width: 100%;
+		margin-bottom: 20px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid white;
+	}
 }

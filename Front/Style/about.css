@@ -53,7 +53,50 @@ body{
 	height: 35px;
 }
 .member-contact:hover{
-
 	background-color: grey;
 	cursor: pointer;
+}
+
+
+@media screen and (max-width: 770px) {
+	.about{
+		/*border: 3px solid yellow;*/
+		width: 100%
+	}
+	.about-info{
+		/*border: 2px solid blue;*/
+		width: 100%
+	}
+	.team{
+		/*border: 2px solid red;*/
+		width: 100%;
+		flex-direction: column;
+	}
+	.member{
+		width: 100%;
+		/*border: 2px solid green;*/
+		margin-bottom: 30px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid grey;
+
+
+	}
+	.member-img-div{
+		width: 100%;
+		/*border: 2px solid red;*/
+		height: auto;
+		
+	}
+	.member-img{
+		
+	}
+	.member-name{
+		
+	}
+	.member-occupation{
+		
+	}
+	.member-contact{
+		
+	}
 }

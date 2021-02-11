@@ -62,7 +62,7 @@ var groups =
 	{	"name":"CampoLab", 
 		"category": "Technology", 
 		"id":"8", 
-		"img":"../Images/Group/8CamoLab.jpg", 
+		"img":"../Images/Group/8CampoLab.jpg", 
 		"description":"Sed non purus nec mi rutrum iaculis. Proin ex nunc, varius ut ipsum vel, rhoncus faucibus nisi. ",
 		"followers":"2,345",
 		"posts": [1,4,5,8]

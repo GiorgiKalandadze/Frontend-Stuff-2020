@@ -1,13 +1,5 @@
-* {
-	box-sizing: border-box;
-}
-body{
-	padding: 0px;
-	margin: 0px;
-	background-color: #f1f1f1;
-	font-family: 'Raleway', sans-serif;
-}
 .navbarContainer {
+	width: 100%;
 	padding-left: 20px;
 	padding-right: 20px;
 	display: flex;
@@ -16,6 +8,7 @@ body{
 	color: white;
 	background-color: #637a94;
 	height: 50px;
+	/* border: 3px solid blue; */
 }
 #home-button{
 	border: none;
@@ -24,12 +17,23 @@ body{
 	font-size: 20px;
 	cursor: pointer;
 	color: white;
+	/* border: 3px solid red; */
+	
 }
 #rightSide {
+	/* border: 3px solid red;  */
 	color: white;
 	display: flex;
 	align-items: center;
+	
 }
+#header-navs{
+	border: 3px solidyellow;
+}
+.nav_links{
+	/* border: 3px solid green; */
+}
+
 
 .navElem, .navTitle, #login-button{
 	font-size: 16px;
@@ -46,14 +50,15 @@ body{
 	padding: 0px 20px;
 }
 #hamburger-header{
-	background: none;
+	display: none;
 	outline: none;
 	border: none;
 	color: white;
 	font-size: 1.1rem;
-	display: none;
+	
 }
 #login-button{
+	
 	outline: none;
 	text-decoration: none;
 	height : 30px;
@@ -71,25 +76,20 @@ body{
 #login-button:hover{
 	opacity: 1;
 }
-
-
-@media screen and (max-width: 950px) {
-	#header-nav-contact{
-		display: none;
-	}
-	
+#closebtn{
+	display: none;
 }
-@media screen and (max-width: 850px) {
-	#header-nav-about{
-		display: none;
-	}
 
+
+
+@media screen and (min-width: 770px) {
+	#rightSide{
+		width: 800px !important;	
+	}
 }
 @media screen and (max-width: 770px) {
 	.navbarContainer{
 		width: 100%;
-		height: auto;
-		/*border: 1px solid black;*/
 		flex-direction: column;
 		align-items: flex-start;	
 		padding-left: 2px;
@@ -98,26 +98,87 @@ body{
 	}
 	#hamburger-header{
 		position: absolute;
-		right: 0px;
+		right: 5px;
 		display: block;
+		color:black;
 	}
-	#rightSide{
+	/*#rightSide{
 		display: none;
 		width: 100%;
-		/*border: 1px solid red;*/
+		border: 1px solid red;
 		flex-direction: column;
 		align-items: flex-start;
-		
+		border: 1px solid red;
+	}*/
+	#rightSide{
+		display: inline;
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #536272;
+		overflow-x: hidden;
+		transition: 0.5s;
+		text-align: center;
+	}
+	.navTitle{
+		background-color: #536272;
+		opacity: 1;
+		border: none;
+		outline: none;
+		cursor: pointer;
 	}
 	#header-navs{
+		/*border: 3px solid red;*/
+	}
+	.nav_links{
+		text-align: center;
+		top: 25%;
+		width: 100%;
+		padding: 0px;
+	}
+	.navElem {
+		
+		padding: 0px;
+		margin-bottom: 10px;
+		text-decoration: none;
+		font-size: 36px;
+		color: #818181;
+		display: block;
+		transition: 0.4s;
+	}
+	.navTitle{
+		/*border: 3px solid white;*/
+	}
+	.navElem:hover, .navElem:focus {
+  		
+	
+	}
+	#closebtn{
+		display: block;
+		position: absolute;
+	  	top: 5px;
+	  	right: 15px;
+	  	font-size: 60px;
+		background-color: #536272;
+		border: none;
+		outline: none;
+		color: white;
+	}
+	
+
+	/**/
+	/*#header-navs{
 		width: 100%;
 		
 	}
 	.nav_links{
-		/*border: 1px solid yellow;*/
+		
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+
 		padding-left: 5px;
 		margin: 0px;
 	}
@@ -126,17 +187,11 @@ body{
 		margin-bottom: 5px;
 		font-size: 1.2rem;
 		width: 100%;
-		text-align: center;
-	}
+		
+	}*/
 	#home-button{
 		margin-bottom: 5px;
-		/*border: 1px solid white;*/
-	}
-	#header-nav-about{
-		display: none;
-	}
-	#header-nav-contact{
-		display: none;
+		
 	}
 
 	

@@ -12,7 +12,23 @@
   
 
 </head>	
-
+<!-- Recoomeneded
+<div id="vip">
+          		<button class="vip-slide" id="prev">&#10094;</button>
+          		<div class="vip-item">
+            		<img class="vip-img" id="0" src="../Images/Items/tools1.png">
+          		</div>
+	          	<div class="vip-item">
+	            	<img class="vip-img" id="1"src="../Images/Items/tools2.jpg">
+	          	</div>
+          		<div class="vip-item">
+            		<img class="vip-img" id="2"src="../Images/Items/tools3.jpg">
+          		</div>
+           		<div class="vip-item">
+            		<img class="vip-img"  id="3"src="../Images/Items/tractor1.jpg">
+          		</div> 
+          		<button class="vip-slide" id="next">&#10095;</button>
+        	</div> -->
 <body>
 	<header class="navbarContainer">
 	    <button id="home-button">AgroNet</button>
@@ -37,90 +53,21 @@
 			<div class="trade-categorys">
 				<div class="filter-box">
 					<label class="trade-category-label">Type</label>
-					<ul class='filter-checkboxes'>
-
-						<li>
-							<input type="checkbox" class="trade-type-fruit"><label>Fruit
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-type-vegetable"><label>Vegetable
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-type-animal"><label>Animal
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-type-bird"><label>Bird
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-type-bean"><label>Bean
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-type-transport"><label>Transport
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-type-tools"><label>Tools
-							</label>
-						</li><li>
-							<input type="checkbox" class="trade-type-farms"><label>Farms
-							</label>
-						</li>
-						
-					</ul>
+					<button class="trade-category-button">Agrochemical</button>
+					<button class="trade-category-button">Crop Protection</button>
+					<button class="trade-category-button">Decorative Plants</button>
+					<button class="trade-category-button">Seeds</button>
+					<button class="trade-category-button">Vehicle</button>
 				</div>
 				<hr class="trade-hr">
 				<div class="filter-box">
 					<label class="trade-category-label" id="price-inp">Price</label>
-					<input type="range" min="1" max="1000" value="500" class="slider" 
-							id="price-ranger">
-					<p id="price">Value: <span id="price-value"></span></p>
+					<label class="price-border-label">Min</label>
+					<input type="number">
+					<label class="price-border-label">Max</label>
+					<input type="number">
+					<button id="set-trade-price">Set Price</button>
 				</div>	
-				<hr class="trade-hr">
-				<div class="filter-box">
-					<label class="trade-category-label">Location</label>
-					<ul class='filter-checkboxes'>
-						<li>
-							<input type="checkbox" class="trade-location-Tbilisi"><label>Tbilisi
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-location-Batumi"><label >Batumi
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-location-Kutaisi"><label>Kutaisi
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-location-Telavi"><label>Telavi
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-location-Zugdidi"><label>Zugdidi
-							</label>
-						</li>
-						<li>
-							<input type="checkbox" class="trade-location-Abroad"><label>Abroad
-							</label>
-						</li>
-						
-					</ul>
-				</div>
-				<hr class="trade-hr">
-				<div class="filter-box">
-					<label class="trade-category-label">Delivery</label>
-					<ul class='filter-checkboxes'>
-						<li>
-							<input type="checkbox" class="trade-delivery-yes">Yes<label>
-							</label>
-						</li>
-					</ul>
-				</div>
 				<hr class="trade-hr">
 			</div>	
 		</div>

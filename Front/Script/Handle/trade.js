@@ -1,86 +1,79 @@
-
-//Trade, Items, Item info  ///////////////////////////////////////////////////////////////////////////////////
-var checkedCounter = 0;
-
-function displayAllItems(){
-	var itemsArr = document.getElementsByClassName("trade-item");
-	for(i = 0; i < itemsArr.length; i++){
-		itemsArr[i].style.display = "block";
-	}
-}
-function removeAllItems(){
-	var itemsArr = document.getElementsByClassName("trade-item");
-	for(i = 0; i < itemsArr.length; i++){
-		itemsArr[i].style.display = "none";
-	}
-}
-
-function filterItems(e){
-	if(checkedCounter == 0){
-		removeAllItems();
-	}
-	var itemsArr = document.getElementsByClassName('trade-item');
-	var splitted = e.target.className.split("-");
-	var filter = splitted[1];
-	var elem = splitted[2];
-	var checked = document.getElementsByClassName(e.target.className)[0].checked;
-	
-	if(checked){
-		checkedCounter += 1;
-		for(i = 0; i < itemsArr.length; i++){
-			var item = itemsArr[i];
-			
-			if(item.getElementsByClassName('item-' + filter)[0].innerHTML == elem){
-				item.style.display = 'block';
-			} 	
-		}
-	} else {
-		checkedCounter -= 1;
-		if(checkedCounter == 0){
-			displayAllItems();
-		} else {
-			for(i = 0; i < itemsArr.length; i++){
-			var item = itemsArr[i];
-			
-			if(item.getElementsByClassName('item-' + filter)[0].innerHTML == elem){
-				item.style.display = 'none';
-			} 	
-		}
-		}
-	}
-	
-}
-
 document.addEventListener('click', function (e){
+	if(e.target.className == "trade-category-button"){
+		if(chosenCategoryId == 0){
+			chooseCategory(e.target.id);
+			document.getElementsByClassName('trade-right')[0].innerHTML = '';
+			loadCategoryItems(e.target.id);
+		} else {
+			clearCategory(e.target.id);
+			document.getElementsByClassName('trade-right')[0].innerHTML = '';
+			loadCategoryItems(1);
+		}
+		closeNav();
+	}
 	//e.preventDefault();
 	if(e.target.className == 'item-img'){
 		document.getElementsByClassName('trade-right')[0].innerHTML = itemInHTML;
 		loadItemIn(e);
 	}
-	if(e.target.className.includes("trade", 0)){
-		filterItems(e);
-	}
 	if(e.target.id == 'trade-in-back'){
 		document.getElementsByClassName('trade-right')[0].innerHTML = '';
-		loadItems();
+		if(chosenCategoryId == 0){
+			loadCategoryItems(1);
+		} else {
+			loadCategoryItems(chosenCategoryId);
+		}
 	}
 	
-})
+});
 
+var chosenCategoryId = 0;
+function clearCategory(id){
+	document.getElementById(id).style.backgroundColor = "white";
+	document.getElementById(id).style.color = "black";
+	chosenCategoryId = 0;
+}
+function chooseCategory(id){
+	var buttons = document.getElementsByClassName("trade-category-button");
+	var currentButton = null;
+	for(i = 0; i < buttons.length; i++){
+		currentButton = buttons[i];
+		if(currentButton.id != id){
+			currentButton.style.backgroundColor = "white";
+			currentButton.style.color = "black";
+		} else {
+			currentButton.style.backgroundColor = "#637a94";
+			currentButton.style.color = "white";
+		}
+	}
+	chosenCategoryId = id;
+}
+function displayAllItems(){
+	
+}
+function removeAllItems(){
 
+}
 
-
-function loadItems(){
+function loadCategoryItems(index){
+	var array = items[index - 1];
 	var d = document.createElement('div');
 	d.className = 'trade-list';
-	for(i = 0; i < items.length; i++){
-		var item = items[i];
+	var folder = "";
+	for(j = 0; j < array.length; j++){
+		var item = array[j];
+		if(j == 0){
+			folder = item;
+			continue;
+		}
 		var div = document.createElement('div');
 		div.className = 'trade-item';
 		var img = document.createElement('img');
-		img.src = item.img;
+
+		img.src = "../Images/Items/" + folder + "/" + item.img;
 		img.className = 'item-img';
 		img.id = item.id;
+		img.setAttribute("categoryId", index);
 		var h3 = document.createElement('h3');
 		h3.className = 'item-title';
 		h3.innerHTML  = item.name;
@@ -100,9 +93,15 @@ function loadItems(){
 		div.appendChild(p);
 		d.appendChild(div);
 	}
-	document.getElementsByClassName('trade-right')[0].appendChild(d);
 	
+	document.getElementsByClassName('trade-right')[0].appendChild(d);
+
 }
+
+
+
+
+
 
 
 
@@ -118,14 +117,29 @@ function loadItems(){
 
 function loadItemIn(e){
 	var id = e.target.id;
-	var item = items[id];
-	document.getElementsByClassName('item-in-back-img')[0].src = item.img;
+	var categoryId = e.target.getAttribute("categoryId");
+	var categoryArray = items[categoryId - 1];
+	var item = categoryArray[id];
+	document.getElementsByClassName('item-in-back-img')[0].src = "../Images/Items/" + categoryArray[0] + "/" + item.img;
 	document.getElementById('item-in-name').innerHTML = item.name;
 	document.getElementById('item-in-price').innerHTML = item.price;
-	document.getElementById('item-in-location').innerHTML = item.location;
+	document.getElementById('item-in-description').innerHTML = item.description;
 	document.getElementsByClassName('trade-right')[0].style.height = '650px';
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Vip slider ///////////////////////////////////////////////////////////////////////

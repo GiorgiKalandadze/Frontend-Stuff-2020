@@ -59,3 +59,68 @@
 #message-sent{
 	display: none;
 }
+
+
+
+@media screen and (max-width: 770px) {
+	#contact-cont{
+		/*border: 3px solid black;*/
+		width: 100%;
+		flex-direction: column;
+		padding: 20px;
+	}
+	#contact-left{
+		width: 100%;
+		/*border: 1px solid green;*/
+		margin-bottom: 20px;
+	}	
+	#contact-right{
+		width: 100%;
+		/*border: 1px solid green;*/
+	}
+	#contact-form{
+		display: flex;
+		flex-direction: column;
+		
+		width: 100%;
+		
+		/*border: 1px solid red;*/
+	}
+	.contact-row{
+		width: 100%;
+		/*border: 1px solid red;*/
+		display: flex;
+		flex-direction: column;
+	}
+	.contact-row.text{
+		margin: 0px;
+		padding: 0px;
+		align-items: center;
+		
+	}
+	.contact-label.text{
+		margin-top: 20px;
+	}
+	.contact-input{
+		width: 100%;
+		height: 20px;
+	}
+	.contact-input.text{
+		height: 200px;
+		width: 100%;
+	}
+	#contact-send-button{
+		margin: auto;
+	}
+	#map{
+		overflow:hidden;
+
+		/*border: 1px solid red;*/
+		width: 100% !important;
+	}
+
+	#google-map{
+		/*border: 1px solid blue;*/
+		width: 100%;
+	}
+}

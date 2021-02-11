@@ -6,8 +6,8 @@ body{
     display: flex;
     flex-direction: row;
    	justify-content:space-around;
-   	padding: 50px 100px 0px 20px;
-   	margin-bottom: 50px;
+   	/*padding: 50px 100px 0px 20px;*/
+   	
 }
 #loginBackImg{
 	width : 500px;
@@ -28,7 +28,7 @@ body{
 	flex-direction: column;
 	justify-content: flex-start;
 }
-.loginForm h2{
+#login-welcome-label{
 	text-align: center;
 	font-size: 2.9rem;
 	text-transform: uppercase;
@@ -78,7 +78,6 @@ body{
 	color: #444;
 }
 #forgot {
-	
 	text-align: right !important;
 	text-decoration: none;
 	color : #999;
@@ -111,15 +110,27 @@ body{
 	opacity: 1;
 }
 
-@media screen and (max-width: 950px){
+@media screen and (max-width: 770px) {
 	#loginBackImg{
-		
 		display: none;
 	}
+	.login-container{
+		padding-top: 10px;
+		/*border:1px solid red;*/	
+	}
+	.loginBox{
+		
+		/*border: 1px solid blue;*/
+	}
 	.loginForm{
+		/*border: 1px solid green;*/
 		width: 100%; 
 	}
-	.container{
-			
+	.inputBox{
+		/*border: 1px solid yellow;*/
+	}
+	#login-welcome-label{
+		width: 100%;
+		font-size: 1.5rem;
 	}
 }

@@ -5,6 +5,8 @@ document.addEventListener('click', function (e){
 		if(valid){
 			document.getElementById('login-button').innerHTML = document.getElementById("username-input").value;
 			document.getElementsByClassName('main-content')[0].innerHTML = mainHTML;
+			loadPosts();
+			loadNews();
 			logged = true;
 		} else {
 			document.getElementsByClassName('main-content')[0].innerHTML = loginHTML;
@@ -15,7 +17,7 @@ document.addEventListener('click', function (e){
 	//Logout
 	if(e.target.id == "log-out"){
 		logged = false;
-		document.getElementsByClassName('main-content')[0].innerHTML = startHTML;
+		document.getElementsByClassName('main-content')[0].innerHTML = indexHTML;
 		document.getElementById('login-button').innerHTML = 'Login';
 
 	}
@@ -57,7 +59,7 @@ var loggedID = 0;
 
 
 function checkUserLogin(){
-	console.log('Started - Checking User Login');
+	//console.log('Started - Checking User Login');
 	var username = document.getElementById("username-input").value;
 	var password = document.getElementById("password-input").value;
 	for(i in users){
@@ -70,7 +72,7 @@ function checkUserLogin(){
 			}
 		}
 	}
-	console.log('Finished - Checking User Login - Invalid');
+	//.log('Finished - Checking User Login - Invalid');
 	return false;
 }
 

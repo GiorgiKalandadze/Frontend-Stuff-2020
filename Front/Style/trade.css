@@ -9,9 +9,10 @@ body{
 	background-color: white;
 }
 .trade-left{	
-	width: 200px;
-	height: 650px;
-	margin-right: 60px;
+	/*width: 200px;*/
+	width: 20%;
+	height: 500px;
+	margin-right: 40px;
 	background-color: #637a94;
 	display: flex;
 	flex-direction: column;
@@ -21,24 +22,51 @@ body{
 .filter-box{
 	padding: 5px;
 	color: white;
-}
-.trade-category-label{
-	margin-left: 5px;
+	display: flex;
+	flex-direction: column;
 }
 .filter-checkboxes{
 	list-style-type: none;
 	padding: 0px;
-	
 }
-#price{
-	margin-left: 5px;
+.trade-category-button{
+	background-color: white;
+	border: none;
+	color: red;
+	outline: none;
+	cursor: pointer;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	padding: 10px;
+	margin: 5px;
+	margin-left: 0px;
+}
+#price-inp{
+	margin-bottom: 5px;
+}
+.price-border-label{
+	margin: 2px;
+	margin-left: 0px;
+}
+#set-trade-price{
+	margin: 5px;
+	margin-left: 0px;
+	background-color: #F7882F;
+	cursor: pointer;
+	border:none;
+	outline: none;
+	padding: 5px;
+	font-size: 15px;
 }
 .trade-hr{
 	margin: 0px;
 }
 
 .trade-right{
-	width: 1000px;
+	/*width: 1000px;*/
+	width: 75%;
 	display: flex;
 	align-items: space-around;
 	flex-direction: column;
@@ -110,12 +138,18 @@ body{
 }
 .item-in-value{
 	display: 'none';
+	
 }
 .item-in-attribute{
 	font-size: 20px;
 	font-family: 'Raleway', sans-serif;
 	color: white;
 	margin-bottom: 5px;
+}
+.item-description{
+	
+	height: 90px;
+	overflow: hidden;
 }
 #trade-in-back {
 	margin-top: 5px;
@@ -132,7 +166,9 @@ body{
 	background-color: #F7882F;
 	opacity: 0.9;
 }
-
+.fas.fa-times{
+	color: white;
+}
 #trade-in-back:hover{
 	opacity: 1;
 }
