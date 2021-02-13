@@ -1,9 +1,7 @@
 document.addEventListener('click', function (e){
 	if(e.target.className == 'listAvatar'){
-		document.getElementsByClassName('main-content')[0].innerHTML = profileHTML;
-		document.getElementsByClassName('profile-left-button')[0].style.visibility = 'hidden';
-		document.getElementsByClassName('profile-left-button')[1].style.visibility = 'hidden';
-		loadProfile(e.target.id - 1);
+		var id = e.target.id;
+		router.navigate('/People/' + id);
 	}
 })
 
@@ -18,6 +16,7 @@ function loadInfo(index){
 	var profile = profiles[index]; //indexing starts from 0 in arrays 
 	document.getElementById('profile-left-img').src = "../Images/People/" + profile.img;
 	document.getElementById('profile-name').innerHTML = profile.name + " " + profile.surname;
+	document.getElementById('profile-username').innerHTML = profile.username;
 	document.getElementById('profile-occupation').innerHTML = profile.occupation;
 	document.getElementById('profile-location').innerHTML = profile.location;
 	document.getElementById('profile-email').innerHTML = profile.email;
@@ -92,7 +91,25 @@ function loadEducation(index){
 }
 
 
-
-function loadGuestProfile(){
-	
-}
+//Edit Profile ///////////////////////////////////////////
+document.addEventListener('click', function (e){
+	if(e.target.id == "edit-profile"){
+		document.getElementById('right-box').innerHTML = editProfileHTML;
+		user = users[loggedID];
+		document.getElementById('edit-profile-row-username').value = user.username;
+		document.getElementById('edit-profile-row-password').value = user.password;
+		document.getElementById('edit-profile-row-email').value = user.email;
+	}
+	if(e.target.id == 'edit-profile-save-changes'){
+		var username = document.getElementById('edit-profile-row-username').value;
+		var password = document.getElementById('edit-profile-row-password').value;
+		var email = document.getElementById('edit-profile-row-email').value;
+		users[loggedID].password = password;
+		users[loggedID].email = email;
+		profiles[loggedID].email = email;
+		profiles[loggedID].password = password;
+		profiles[loggedID].username = username;
+		document.getElementById('main-cont').innerHTML = profileHTML;
+		loadProfile(loggedID);
+	}
+});

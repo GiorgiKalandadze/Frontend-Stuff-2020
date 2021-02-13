@@ -27,7 +27,7 @@ body{
 	visibility: hidden;
 }
 #registerBackImg{
-	
+	height: auto;
 	width : 600px;
 }
 .registerForm {

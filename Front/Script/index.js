@@ -1,71 +1,40 @@
-window.addEventListener('popstate', (event) => {
-  document.getElementsByClassName('main-content')[0].innerHTML = event.state;
-});
-
 document.addEventListener('click', function (e){
-	// e.preventDefault();
 	if(e.target.id == 'join-button'){
-		document.getElementsByClassName('main-content')[0].innerHTML = registerHTML;
-		window.history.pushState(registerHTML, "Register Page", "register");
-	}
-	if(e.target.id == 'home-button'){
-		document.getElementsByClassName('main-content')[0].innerHTML = indexHTML;
-	}
-
-	if(e.target.id == 'login-button'){
-		
-		
+		router.navigate('/Register');
+	} else if(e.target.id == 'home-button'){
+		router.navigate('/Home');
+	} else if(e.target.id == 'login-button'){
 		if(e.target.innerHTML == "Login"){
-			document.getElementsByClassName('main-content')[0].innerHTML = loginHTML;
+			router.navigate('/Login');
 		} else {
-			document.getElementsByClassName('main-content')[0].innerHTML = profileHTML;
-			loadProfile(loggedID - 1);
+			router.navigate('/Profile/' + loggedID);
 		}
 		closeNav();
 	}
-	if(e.target.className == "navTitle"){
+	if(e.target.className == "navTitle" || e.target.className == "navElem"){
 		closeNav();
 	}
 	if(e.target.id == 'header-nav-main'){
-		if(logged){
-			document.getElementsByClassName('main-content')[0].innerHTML = mainHTML;
-			loadPosts();
-			loadNews();
-		} else {	
-			document.getElementsByClassName('main-content')[0].innerHTML = indexHTML;
-		}		
+		router.navigate('/Home');
+	} else if(e.target.id == 'header-nav-groups'){
+		router.navigate('/Groups');
+	} else if(e.target.id == 'header-nav-people'){
+		router.navigate('/People');
+	} else if(e.target.id == 'header-nav-trade'){
+		router.navigate('/Items');	
+	} else if(e.target.id == 'header-nav-about'){
+		router.navigate('/About');
+	} else if(e.target.id == 'header-nav-contact'){
+		router.navigate('/Contact');
+	} else if(e.target.id == 'privacy-link'){
+		router.navigate('/Privacy');
 	}
-	if(e.target.id == 'header-nav-groups'){
-		
-		// history.pushState('a','asd','/iasna');
 
-		document.getElementsByClassName('main-content')[0].innerHTML = groupsListHTML;
-		loadGroups();
-		window.history.pushState(groupsListHTML, "Groups Page", "groups");
-	}
-	if(e.target.id == 'header-nav-people'){
-		document.getElementsByClassName('main-content')[0].innerHTML = peopleListHTML;
-		loadPeople();
-		//window.history.pushState(peopleListHTML, "People Page", "people");
-	}
-	if(e.target.id == 'header-nav-trade'){
-		document.getElementsByClassName('main-content')[0].innerHTML = tradeHTML;
-		loadCategoryItems(1);
-		window.history.pushState(tradeHTML, "Trade Page", "trade");
-	}
-	if(e.target.id == 'header-nav-about'){
-		document.getElementsByClassName('main-content')[0].innerHTML = aboutHTML;
-		window.history.pushState(aboutHTML, "About Page", "about");
-	}
-	if(e.target.id == 'header-nav-contact'){
-		document.getElementsByClassName('main-content')[0].innerHTML = contactHTML;
-		window.history.pushState(contactHTML, "Contact Page", "contact");
-		//window.history.pushState(contactHTML, "Title", window.location.href + "
-	}
-	if(e.target.id == 'privacy-link'){
-		document.getElementsByClassName('main-content')[0].innerHTML = privacyHTML;
-		window.scrollTo(0,0);
-	}
+	if(e.target.id == 'contact-send-button'){ //Contact Page Send
+		document.getElementById('message-sent').style.display = 'inline';
+		document.getElementById('contact-left').style.display = 'none';
+	}	
+	
 }); 
 
 
@@ -78,203 +47,78 @@ var indexHTML =
 			  	<button id="join-button" class="join">Join Agronet</button>
 		  	</div>
 			<div class="video">
-			  	<!-- <video autoplay loop muted width="auto" height="400">
-				 	<source src="../Images/Agro.mp4" type="video/mp4">
-			  		Your browser does not support the video tag.
-				</video> -->
-				<iframe class="home-video" width="560" height="315" src="https://www.youtube.com/embed/1bieukoWx1Q?autoplay=1&mute=1" frameborder="0"></iframe>
+				<iframe class="home-video" width=100% height="315" src="https://www.youtube.com/embed/1bieukoWx1Q?autoplay=1&mute=1" frameborder="0"></iframe>
 			</div>
-			
 		</div>
-
 		<div class="mid-container">
 			<div class="mid-text">
 				<h3>AgroNet</h3>
-				<h4>AgroNet - the viziers said, "King, why do you insist that you are old so soon? 
-					For though it's true our rose has faded, we all know it as a boon.
-					It still excels in scent and color though its day is far past noon.
-					What kind of star dares offer challenge even to a waning moon.
+				<h4>	AgroNet - the viziers said, "King, why do you insist that you are old so soon? 
+						For though it's true our rose has faded, we all know it as a boon.
+						It still excels in scent and color though its day is far past noon.
+						What kind of star dares offer challenge even to a waning moon.
 				 </h4>
-				 <h5>Oh, king, please don't speak thus to us: your rose is not faded today.
+				 <h5>	Oh, king, please don't speak thus to us: your rose is not faded today.
 						Bad counsel from you is better than the good another might say.
 						It is right to do whatever will make your heartache go away.
 				</h5>
 			</div>
 			<i class="fas fa-search-location"></i>
 		</div>
-
 		<div class="mid-container">
 			<i class="fas fa-handshake"></i>
 			<div class="mid-text">
 				<h3>Grow naturally, Live natural</h3>
-				<h4>Although a woman, she is a sovereign, ordained by God's decree. 
-					We are not flattering you; but even in your absence agree. 
-					Like her radiance, her deeds are as bright as the sunshine to see. 
-					Lion's whelps are equally lions, though female or male they be.
+				<h4>	Although a woman, she is a sovereign, ordained by God's decree. 
+						We are not flattering you; but even in your absence agree. 
+						Like her radiance, her deeds are as bright as the sunshine to see. 
+						Lion's whelps are equally lions, though female or male they be.
 				 </h4>
-				 <h5>He kept his love-madness hidden, lodged deep within him like a dart.
-					Whenever he couldn't see her, though, his rose's fading would start; 
-					Whenever he saw her, fire leapt up, his wound more sharply would smart. 
+				 <h5>	He kept his love-madness hidden, lodged deep within him like a dart.
+						Whenever he couldn't see her, though, his rose's fading would start; 
+						Whenever he saw her, fire leapt up, his wound more sharply would smart. 
 				</h5>
 			</div>
 		</div>
-	
 		<div class="feature-container">
 			<h3>Key features of AgroNet</h3>
 			<div class="features-row">
 				<div class="feature-elem">	
 					<i class="fas fa-globe"></i>
 					<h4 class="feature-title">Global</h4>
-					<p class="feature-description">	he who created the firmament, by that mighty power made beings
+					<p class="feature-description">	
+						he who created the firmament, by that mighty power made beings
 						inspired from on high with souls celestial; 
 					</p>
 				</div>
-
 				<div class="feature-elem">
-					
 					<i class="fas fa-shield-alt"></i>
 					<h4 class="feature-title">Safe</h4>
-					<p class="feature-description">	when the soldiers hunted and sought their lord, and could no longer find the sun-faced, their countenances paled.
+					<p class="feature-description">	
+						when the soldiers hunted and sought their lord, and could no 
+						longer find the sun-faced, their countenances paled.
 					</p>
 				</div>
-
 				<div class="feature-elem">
-					
 					<i class="fab fa-hubspot"></i>
 					<h4 class="feature-title">Modern</h4>
-					<p class="feature-description">	Shermadin assembled together the courtiers and nobles; he showed them the letter in which Avt’handil.
+					<p class="feature-description">	
+						Shermadin assembled together the courtiers and nobles; 
+						he showed them the letter in which Avt’handil.
 					</p>
 				</div>
-
 				<div class="feature-elem">
-					
 					<i class="fas fa-bolt"></i>
 					<h4 class="feature-title">Fast</h4>
-					<p class="feature-description">	When the soldiers hunted and sought their lord, and could no longer find the sun-faced, their countenances paled.
+					<p class="feature-description">	
+						When the soldiers hunted and sought their lord, 
+						and could no longer find the sun-faced, their countenances paled.
 					</p>
 				</div>
 			</div>
 		</div>
 `
-//about
-var aboutHTML =
-`
-<div class="about">
-	<div class="about-info">
-  		<h2>AgroNet - A new Agri Perspective</h2>
-      	<p>
-        	Praesent interdum velit justo, in dignissim dolor bibendum sed. Curabitur ac accumsan ligula. Cras nec est sed felis volutpat sodales. Morbi venenatis feugiat tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque nec pellentesque lectus, in luctus turpis. Pellentesque tristique quam quis nisi laoreet cursus. Proin rutrum elit ut lacus volutpat, sit amet laoreet lacus interdum. Duis dui sem, varius iaculis ipsum ut, egestas molestie massa. Suspendisse ut libero non eros interdum finibus id ac arcu. Sed sit amet purus fermentum, porta sapien at, aliquet massa. Nunc imperdiet nunc sem, euismod cursus sapien mollis vel. Sed pretium, libero eget laoreet dignissim, quam mauris hendrerit dolor, vel consequat nibh tortor ac quam. Sed rutrum, turpis non condimentum efficitur, libero ante egestas elit, non dictum nunc erat ac erat.
-		</p>
-    </div>
-    <div class="team">
-      	<div class="member">
-        	<div class="member-img-div">
-           		<img id="ap" class="member-img" src="../Images/People/tristan.jpg">
-            </div>
-            <h3 class="member-name">Tristan Harris</h3>
-            <h5 class="member-occupation">Computer Scientist</h5>
-            <button class="member-contact">Contact</button>
-       	</div>
-    	<div class="member">
-           	<div class="member-img-div">
-            	<img id="geta" class="member-img" src="../Images/People/cv.jpg">
-            </div>
-            <h3 class="member-name">Giorgi Kalandadze</h3>
-            <h5 class="member-occupation">Software Developer</h5>
-            <button class="member-contact">Contact</button>
-        </div>
-    </div>
-</div>
-`
-//Start
-var startHTML = `<div class="top-row">
-  		<div class="welcome">
-		  	<h1>Adding Green to your Life</h1>
-		  	<h3>Millions of people use agrolife to turn their ideas into reality.</h3>
-		  	<button id="join-button" class="join">Join Agronet</button>
-	  	</div>
-		<div class="video">
-		  	 <!-- <video autoplay loop muted width="auto" height="400">
-			 	<source src="../Images/Agro.mp4" type="video/mp4">
-		  		Your browser does not support the video tag.
-			</video> -->
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/1bieukoWx1Q?autoplay=1&mute=1" frameborder="0"></iframe>
-			
-		</div>
-		
-	</div>
 
-	<div class="mid-container">
-		<div class="mid-text">
-		<h3>AgroNet</h3>
-		<h4>AgroNet - the viziers said, "King, why do you insist that you are old so soon? 
-			For though it's true our rose has faded, we all know it as a boon.
-			It still excels in scent and color though its day is far past noon.
-			What kind of star dares offer challenge even to a waning moon.
-		 </h4>
-		 <h5>Oh, king, please don't speak thus to us: your rose is not faded today.
-				Bad counsel from you is better than the good another might say.
-				It is right to do whatever will make your heartache go away.
-			</h5>
-		</div>
-		<i class="fas fa-search-location"></i>
-	</div>
-
-	<div class="mid-container">
-		<i class="fas fa-handshake"></i>
-		<div class="mid-text">
-			<h3>Grow naturally, Live natural</h3>
-			<h4>Although a woman, she is a sovereign, ordained by God's decree. 
-				We are not flattering you; but even in your absence agree. 
-				Like her radiance, her deeds are as bright as the sunshine to see. 
-				Lion's whelps are equally lions, though female or male they be.
-			 </h4>
-			 <h5>He kept his love-madness hidden, lodged deep within him like a dart.
-				Whenever he couldn't see her, though, his rose's fading would start; 
-				Whenever he saw her, fire leapt up, his wound more sharply would smart. 
-			</h5>
-		</div>
-	</div>
-
-	<div class="feature-container">
-		<h3>Key features of AgroNet</h3>
-		<div class="features-row">
-			<div class="feature-elem">
-				
-				<i class="fas fa-globe"></i>
-				<h4 class="feature-title">Global</h4>
-				<p class="feature-description">	he who created the firmament, by that mighty power made beings
-					inspired from on high with souls celestial; 
-				</p>
-			</div>
-
-			<div class="feature-elem">
-				
-				<i class="fas fa-shield-alt"></i>
-				<h4 class="feature-title">Safe</h4>
-				<p class="feature-description">	when the soldiers hunted and sought their lord, and could no longer find the sun-faced, their countenances paled.
-				</p>
-			</div>
-
-			<div class="feature-elem">
-				
-				<i class="fab fa-hubspot"></i>
-				<h4 class="feature-title">Modern</h4>
-				<p class="feature-description">	Shermadin assembled together the courtiers and nobles; he showed them the letter in which Avt’handil.
-				</p>
-			</div>
-
-			<div class="feature-elem">
-				
-				<i class="fas fa-bolt"></i>
-				<h4 class="feature-title">Fast</h4>
-				<p class="feature-description">	When the soldiers hunted and sought their lord, and could no longer find the sun-faced, their countenances paled.
-				</p>
-			</div>
-		</div>
-	</div>`
-
-//Register
 var registerHTML = 
 `
 <div class="register-container">
@@ -309,7 +153,7 @@ var registerHTML =
 			<button id="register-button">Sign Up</button>
 		</div>
 	</div>
-	<img id="registerBackImg" src="../Images/Register/reg.png">
+	<img id="registerBackImg" src="../Images/Register/reg.png" alt="Register Background">
 </div>
 `
 
@@ -318,10 +162,10 @@ var registerHTML =
 var loginHTML = 
 `
 <div class="login-container">
-	<img id="loginBackImg" src="../Images/Login/log.svg">
+	<img id="loginBackImg" src="../Images/Login/log.svg" alt="Login Background">
 	<div class="loginBox">
 		<div class="loginForm">
-			<img src="../Images/Login/profile2.png" class="avatar">
+			<img src="../Images/Login/profile2.png" class="avatar" alt="Login Avatar">
 			<h2 id="login-welcome-label">Welcome</h2>
 			<h5 id="wrong-login">Wrong username or password</h5>
 			<div class="inputBox first">
@@ -369,16 +213,78 @@ var mainHTML =
   		<div id="main-feed-right">
   			<h3 id="advertisement-label">Advertisement</h3>
   			<div class="ad">
-          		<img class="ad-img" src="../Images/Ads/ad3.png">
+          		<img class="ad-img" src="../Images/Ads/ad3.png" alt="Ads">
         	</div>
 	        <div class="ad">
-	          <img class="ad-img" src="../Images/Ads/ad4.png">
+	          <img class="ad-img" src="../Images/Ads/ad4.png" alt="Ads">
 	        </div>	
   		</div>
 	
   	</div>`
 
-//User profile
+
+var tradeHTML = 
+`
+<div class="trade-cont">	
+		<button id="hamburger-trade" onclick="openNavTrade()">Category</button>
+		<div class="trade-left">
+			<button id="closebtnGroup" onclick="closeNavTrade()">&times;</button>
+			<div class="trade-categorys">
+				<div class="filter-box">
+					<label class="trade-category-label">Type</label>
+					<button class="trade-category-button" id="category1">Agrochemical</button>
+					<button class="trade-category-button" id="category2">Crop Protection</button>
+					<button class="trade-category-button" id="category3">Decorative Plants</button>
+					<button class="trade-category-button" id="category4">Seeds</button>
+					<button class="trade-category-button" id="category5">Vehicle</button>
+					<button class="trade-category-button" id="category6">Plant Growth Regulators</button>
+				</div>
+				<hr class="trade-hr">
+				<!--
+				<div class="filter-box">
+					<label class="trade-category-label" id="price-inp">Price</label>
+					<label class="price-border-label">Min</label>
+					<input type="number">
+					<label class="price-border-label">Max</label>
+					<input type="number">
+					<button id="set-trade-price">Set Price</button>
+				</div>	
+				<hr class="trade-hr">
+				-->
+			</div>	
+		</div>
+		<div class="trade-right">
+			
+		</div>
+	</div>
+`
+var itemInHTML = 
+`
+<div class="item-in">
+	<div class="item-in-left">
+		<img class="item-in-back-img" src="">
+	</div>
+	<div class="item-in-right">
+		<button id="trade-in-back">Back</button>
+		<div class="item-in-data">
+			<div class="item-in-attribute">
+				<label>Name:</label>
+				<label class="item-in-value" id="item-in-name"></label>
+			</div>
+			<div class="item-in-attribute">
+				<label>Price:</label>
+				<label class="item-in-value" id="item-in-price"></label>
+			</div>
+			<div class="item-in-attribute">
+				<label>Description:</label>
+				<label class="item-in-value" id="item-in-description"></label>
+			</div>
+		</div>
+	</div>
+</div>
+`
+
+
 var profileHTML = 
 `
 <div class="biggest">
@@ -387,6 +293,7 @@ var profileHTML =
       		<img id="profile-left-img" src="">
       		<div id="info">
         		<h3 id="profile-name"></h3>
+				<h4 id="profile-username"></h4>
         		<p>
           			<i class="fas fa-briefcase"></i>
           			<label id="profile-occupation"></label>
@@ -403,20 +310,13 @@ var profileHTML =
           			<i class="fas fa-phone-alt"></i>
           			<label id="profile-phone"></label>
         		</p>
-        
-						<!-- <footer class="social-footer">
-						<hr class="profile-hr">
-						<p>Find me on social media</p>
-						<div class="social-icons">
-							<i class="social fab fa-twitter"></i>
-							<i class="social fab fa-facebook"></i>
-							<i class="social fab fa-instagram"></i>
-							<i class="social fab fa-google"></i>
-							<i class="social fab fa-linkedin"></i>
-							</div>
-						<hr class="profile-hr">
-						</footer> -->
-        
+				<div class="social-icons">
+					<i class="social fab fa-twitter"></i>
+					<i class="social fab fa-facebook"></i>
+					<i class="social fab fa-instagram"></i>
+					<i class="social fab fa-google"></i>
+					<i class="social fab fa-linkedin"></i>
+				</div>
       		</div>
       		<div class="profile-left-buttons">
 				<button id="edit-profile" class="profile-left-button">Edit Profile</button>
@@ -440,76 +340,113 @@ var profileHTML =
 //user edit profile 
 var editProfileHTML = 
 `
-	<div id="edit-profile-box">
-    	<div id="edit-profile-row">
-        	<h4 id="first-edit-profile-label"class="edit-profile-row-label">Username</h4>
-          	<input class="edit-profile-input" type="text" id="edit-profile-row-username" name="username">
-        </div> 
-        <div id="edit-profile-row">
-        	<h4 class="edit-profile-row-label">Password</h4>
-          	<input class="edit-profile-input"type="text" id="edit-profile-row-password" name="password">
-        </div>
-        <div id="edit-profile-row">
-        	<h4 class="edit-profile-row-label">Email</h4>
-          	<input class="edit-profile-input"type="text" id="edit-profile-row-email" name="email">
-        </div>
-        <div id="edit-profile-row">
-          	<h4 class="edit-profile-row-label">Status</h4>
-          	<input class="edit-profile-input" type="text" id="edit-profile-row-status" name="status">
-        </div>
-
-        <button id="edit-profile-save-changes">Save Changes</button>
+<div id="edit-profile-box">
+	<div id="edit-profile-row">
+		<h4 id="first-edit-profile-label"class="edit-profile-row-label">Username</h4>
+		<input class="edit-profile-input" type="text" id="edit-profile-row-username" name="username">
+	</div> 
+	<div id="edit-profile-row">
+		<h4 class="edit-profile-row-label">Password</h4>
+		<input class="edit-profile-input"type="text" id="edit-profile-row-password" name="password">
 	</div>
+	<div id="edit-profile-row">
+		<h4 class="edit-profile-row-label">Email</h4>
+		<input class="edit-profile-input"type="text" id="edit-profile-row-email" name="email">
+	</div>
+	<button id="edit-profile-save-changes">Save Changes</button>
+</div>
  `
 
-//profile experience
-var profileExperienceHTML = 
-`<div class="experience">
-        <h2><i class="mm fas fa-suitcase"></i>Work Experience</h2>
-        <div class="work-box">
-          <h4>Front end Developer</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2015 - Present
-          </p>
-          <h5>Ut a metus bibendum, venenatis ex non, bibendum ligula. Suspendisse convallis venenatis ultricies. Donec eu massa a lectus lacinia egestas. Curabitur a lacus sed sem convallis ultricies at eu orci.</h5>
-        </div>
-        <hr>
-        <div class="work-box">
-          <h4>Software Developer</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2007 - 2015
-          </p>
-          <h5>Ut a metus bibendum, venenatis ex non, bibendum ligula. Suspendisse convallis venenatis ultricies. Donec eu massa a lectus lacinia egestas. Curabitur a lacus sed sem convallis ultricies at eu orci.</h5>
-        </div>
-    
-      </div>
+var groupsListHTML = 
+`
+<div class="group-cont">
+	<button id="hamburger-group" onclick="openNavGroup()">Category</button>
+	<div class="group-left">
+	<button id="closebtnGroup" onclick="closeNavGroup()">&times;</button>
+		<div class="group-categorys">
+			<button id="Animals"	checked="no" class="category">Animals</button>
+			<button id="Birds" 		checked="no" class="category">Birds</button>
+			<button id="Chemicals" 	checked="no" class="category">Chemicals</button>
+			<button id="Equipment" 	checked="no" class="category">Equipment</button>
+			<button id="Fruit" 		checked="no" class="category">Fruit</button>
+			<button id="Plants" 	checked="no" class="category">Plants</button>
+			<button id="Seeds" 		checked="no" class="category">Seeds</button>
+			<button id="Vegetable" 	checked="no" class="category">Vegetable</button>
+			<button id="Technology" checked="no" class="category">Technology</button>
+		</div>	
+	</div>
+	<div class="group-right">
+		<div class="group-list">
+		</div>
+	</div>
+</div>
+`	  
+var groupinHTML =
+`
+<div class="group-in">
+	<div class="group-info">
+		<div id="group-back-img-div">
+			<img class="group-background-img" src="">
+		</div>
+		<div id="group-in-second-line">
+			<div id="group-description">
+				<h3 id="group-name"></h3>	
+			</div>
+		</div>
+	</div>
+	<div class="group-post-cont">
+		<div id="new-post-group">
+			<textarea id="new-post-text-group" rows=5></textarea>
+			<button class="postButton" id="group-new-post-button">Post</button>
+		</div>
+		<div class="group-posts">
+		</div>
+	</div>
+</div>
+`
+	  
+var peopleListHTML = 
+`
+<div class="people-container">
+	<div class="search-container">
+		<input id='people-search-name'  		class="people-search" "type="text" placeholder="Search by name" name="search">
+		<input id='people-search-occupation' 	class="people-search" "type="text" placeholder="Search by Occupation" name="search">
+	</div>
+	<div class="avatarList" id='people-list'>
+	</div>
+</div>
+`
 
-      <div class="experience">
-        <h2><i class="mm fas fa-graduation-cap"></i>Education</h2>
+var aboutHTML =
+`
+<div class="about">
+	<div class="about-info">
+  		<h2>AgroNet - A new Agri Perspective</h2>
+      	<p>
+        	Praesent interdum velit justo, in dignissim dolor bibendum sed. Curabitur ac accumsan ligula. Cras nec est sed felis volutpat sodales. Morbi venenatis feugiat tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque nec pellentesque lectus, in luctus turpis. Pellentesque tristique quam quis nisi laoreet cursus. Proin rutrum elit ut lacus volutpat, sit amet laoreet lacus interdum. Duis dui sem, varius iaculis ipsum ut, egestas molestie massa. Suspendisse ut libero non eros interdum finibus id ac arcu. Sed sit amet purus fermentum, porta sapien at, aliquet massa. Nunc imperdiet nunc sem, euismod cursus sapien mollis vel. Sed pretium, libero eget laoreet dignissim, quam mauris hendrerit dolor, vel consequat nibh tortor ac quam. Sed rutrum, turpis non condimentum efficitur, libero ante egestas elit, non dictum nunc erat ac erat.
+		</p>
+    </div>
+    <div class="team">
+      	<div class="member">
+        	<div class="member-img-div">
+           		<img class="member-img" src="../Images/People/tristan.jpg" alt="Tristan Harris">
+            </div>
+            <h3 class="member-name">Tristan Harris</h3>
+            <h5 class="member-occupation">Computer Scientist</h5>
+            <button class="member-contact">Contact</button>
+       	</div>
+    	<div class="member">
+           	<div class="member-img-div">
+            	<img id="geta" class="member-img" src="../Images/People/cv.jpg" alt="Giorgi Kalandadze">
+            </div>
+            <h3 class="member-name">Giorgi Kalandadze</h3>
+            <h5 class="member-occupation">Software Developer</h5>
+            <button class="member-contact">Contact</button>
+        </div>
+    </div>
+</div>
+`
 
-        <div class="education-box">
-          <h4>42 Public School</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2015 - Present
-          </p>
-          <h5>UNam volutpat velit eu elit malesuada, vel fringilla est ullamcorper. Curabitur accumsan mauris ex, eu feugiat erat venenatis sed. Vivamus vel quam tortor.</h5>
-        </div>
-        <hr>
-        <div class="education-box">
-          <h4>Buckswood School Tbilisi</h4>
-          <p>
-            <i class="fas fa-calendar-alt"></i>
-            2010 - 2014
-          </p>
-          <h5>Curabitur eget nisl tincidunt, congue lectus sed, dictum leo. Etiam viverra diam sed condimentum efficitur.</h5>
-        </div>
-        
-      </div>
-      `
-//contact us page
 var contactHTML = 
 `
 <div id="contact-cont">
@@ -544,85 +481,10 @@ var contactHTML =
 	</div>
 	<div id="contact-right">
 		<div id="map">
-			<iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.6461618650137!2d44.73647295042225!3d41.70657368400889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447344e8047ced%3A0xb53d8ecd4495903f!2sBusiness%20and%20Technology%20University!5e0!3m2!1sen!2sge!4v1610695757399!5m2!1sen!2sge" width="800" height="550" frameborder="0" style="border:0;" allowfullscreen></iframe>
+			<iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.6461618650137!2d44.73647295042225!3d41.70657368400889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447344e8047ced%3A0xb53d8ecd4495903f!2sBusiness%20and%20Technology%20University!5e0!3m2!1sen!2sge!4v1610695757399!5m2!1sen!2sge" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen></iframe>
 		</div>
 	</div>
 </div>
-`
-
-
-
-var groupsListHTML = 
-`<div class="group-cont">
-		<button id="hamburger-group" onclick="openNavGroup()">Category</button>
-		<div class="group-left">
-		<button id="closebtnGroup" onclick="closeNavGroup()">&times;</button>
-			<div class="group-categorys">
-				<button id="Animals"checked="no" class="category">Animals</button>
-				<button id="Birds" checked="no" class="category">Birds</button>
-				<button id="Chemicals" checked="no" class="category">Chemicals</button>
-				<button id="Equipment" checked="no" class="category">Equipment</button>
-				<button id="Fruit" checked="no" class="category">Fruit</button>
-				<button id="Plants" checked="no" class="category">Plants</button>
-				<button id="Seeds" checked="no" class="category">Seeds</button>
-				<button id="Vegetable" checked="no" class="category">Vegetable</button>
-				<button id="Technology" checked="no" class="category">Technology</button>
-			</div>	
-		</div>
-		
-		
-		
-		<div class="group-right">
-			<div class="group-list">
-			</div>
-		</div>
-</div>`
-
-
-
-var groupinHTML =
-`<div class="group-in">
-				<div class="group-info">
-					<div id="group-back-img-div">
-						<img class="group-background-img" src="">
-					</div>
-					<div id="group-in-second-line">
-						<div id="group-description">
-							<h3 id="group-name"></h3>
-							
-						</div>
-						<!--
-						<div class='two-buttons'>
-							<button id="follow-group">Follow</button>
-							<button id="followed-group"><i class="fas fa-check"></i>Followed</button>
-						</div>
-						-->
-					</div>
-				</div>
-				<div class="group-post-cont">
-		      		<div id="new-post-group">
-			            <textarea id="new-post-text-group" rows=5></textarea>
-			            <button class="postButton" id="group-new-post-button">Post</button>
-			        </div>
-			  		<div class="group-posts">
-					</div>
-				</div>
-			</div>
-`
-
-var peopleListHTML = 
-`
-	<div class="people-container">
-      <div class="search-container">
-        <input id='people-search-name'  class="people-search" "type="text" placeholder="Search by name" name="search">
-        <input id='people-search-occupation' class="people-search" "type="text" placeholder="Search by Occupation" name="search">
-        <!--
-        <button id="people-search-button" type="submit"><i class="fa fa-search"></i></button>
-        -->
-		  </div>
-		  <div class="avatarList" id='people-list'>
-		  </div>
-    </div>
 `
 
 var privacyHTML =
@@ -726,165 +588,5 @@ var privacyHTML =
 </div>
 `
 
-
-
-var nav1 = '<h3>NAV1</h3>'
-var nav2 = '<h3>NAV2</h3>'
-var nav3 = '<h3>NAV3</h3>'
-var nav4 = '<h3>NAV4</h3>'
-var nav4 = '<h3>NAV5</h3>'
-
-
-
-
-
-//Profile
-document.addEventListener('click', function (e){
-	
-	if(e.target.id == "edit-profile"){
-		document.getElementById('right-box').innerHTML = editProfileHTML;
-		user = users[loggedID];
-		document.getElementById('edit-profile-row-username').value = user.username;
-		document.getElementById('edit-profile-row-password').value = user.password;
-		document.getElementById('edit-profile-row-email').value = user.email;
-		document.getElementById('edit-profile-row-status').value = user.status;
-	}
-	if(e.target.id == 'edit-profile-save-changes'){
-		//var username = document.getElementById('edit-profile-row-username').value;
-		var password = document.getElementById('edit-profile-row-password').value;
-		var email = document.getElementById('edit-profile-row-email').value;
-		var status = document.getElementById('edit-profile-row-status').value;
-		
-		users[loggedID].password = password;
-		users[loggedID].email = email;
-		users[loggedID].status = status;
-
-		document.getElementById('right-box').innerHTML = profileExperienceHTML;
-	}
-})
-
-//Groups List
-
-
-/*Peope, farmers */
-function loadPeople(){
-	for(i in profiles){
-		person = profiles[i];
-		var farmer = person[i];
-		var div = document.createElement('div');
-		div.className = 'info';
-		var img = document.createElement('img');
-		img.className = 'listAvatar';
-		img.src  = "../Images/People/" + person.img;
-		img.id = person.id;
-		var name = document.createElement('h4');
-		name.className = "personName";
-		name.id = "personNameID";
-		name.innerHTML = person.name + " " + person.surname;
-		var occupation = document.createElement('h4');
-		occupation.className = "occupation";
-		occupation.innerHTML = person.occupation;
-		div.appendChild(img);
-		div.appendChild(name);
-		div.appendChild(occupation);
-		document.getElementById('people-list').appendChild(div);
-	}
-}
-document.addEventListener('keyup', function(e){
-	if(e.target.className == 'people-search'){	
-		filterPeople(document.getElementById('people-search-name').value, document.getElementById('people-search-occupation').value);
-	}
-});
-
-//On page people filters people
-function filterPeople(searchValue1, searchValue2){
-	var divs = document.getElementsByClassName('info');
-	for(i=0; i < divs.length; i++){
-		var currDiv = divs[i];
-		var currName = currDiv.getElementsByClassName('personName')[0].innerHTML;
-		var currOccu = currDiv.getElementsByClassName('occupation')[0].innerHTML;
-		if(currName.toUpperCase().indexOf(searchValue1.toUpperCase()) > -1 && 
-			currOccu.toUpperCase().indexOf(searchValue2.toUpperCase()) > -1){
-			currDiv.style.display = "";
-			console.log('1');
-		} else {
-			console.log('2');
-			currDiv.style.display = "none";
-		}
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-var itemInHTML = 
-`
-<div class="item-in">
-	<div class="item-in-left">
-		<img class="item-in-back-img" src="">
-	</div>
-	<div class="item-in-right">
-		<button id="trade-in-back">Back</button>
-		<div class="item-in-data">
-			<div class="item-in-attribute">
-				<label>Name:</label>
-				<label class="item-in-value" id="item-in-name"></label>
-			</div>
-			<div class="item-in-attribute">
-				<label>Price:</label>
-				<label class="item-in-value" id="item-in-price"></label>
-			</div>
-			<div class="item-in-attribute">
-				<label>Description:</label>
-				<label class="item-in-value" id="item-in-description"></label>
-			</div>
-		</div>
-	</div>
-</div>
-`
-
-var tradeHTML = 
-`
-<div class="trade-cont">
-		<div class="trade-left">
-			<div class="trade-categorys">
-				<div class="filter-box">
-					<label class="trade-category-label">Type</label>
-					<button class="trade-category-button" id="1">Agrochemical</button>
-					<button class="trade-category-button" id="2">Crop Protection</button>
-					<!--
-					<button class="trade-category-button" id="3">Decorative Plants</button>
-					<button class="trade-category-button" id="4">Seeds</button>
-					<button class="trade-category-button" id="5">Vehicle</button>
-					-->
-				</div>
-				<hr class="trade-hr">
-				<!--
-				<div class="filter-box">
-					<label class="trade-category-label" id="price-inp">Price</label>
-					<label class="price-border-label">Min</label>
-					<input type="number">
-					<label class="price-border-label">Max</label>
-					<input type="number">
-					<button id="set-trade-price">Set Price</button>
-				</div>	
-				<hr class="trade-hr">
-				-->
-			</div>	
-		</div>
-		<div class="trade-right">
-			
-		</div>
-	</div>
-`
-
+////////////////////////////////////////////////////////////////////////////////////////
 window.history.pushState(indexHTML, "Index Page", "");

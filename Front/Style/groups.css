@@ -12,39 +12,44 @@ body{
 	display: none;
 }
 .group-cont {
+	/* border: 3px solid red; */
+	width: 100%;
 	margin-top: 10px;
 	display: flex;
 	justify-content: flex-start;
 	background-color: white;
 }
 .group-right{
-	width: 1000px;
+	/* border: 3px solid blue; */
+	width: 90%;
 	display: flex;
 	align-items: space-around;
 	flex-direction: column;
+
 	background-color:  #637a94;
 }
 
 .group-list {
+	border: 3px solid black;
 	overflow-y: scroll;
 	height: 680px;
 	background-color:  #637a94;
-	width: 1000px;
+	width: 100%;
 	padding:10px;
 	padding-top: 3px;
 	display: flex;
 	flex-wrap: wrap;
-	
 	align-content: flex-start;
 	
 }
 .group {
 	width: 300px;
 	height: 320px;
-	margin: 5px;
-	margin-bottom: 20px;
 	background-color: white;
-	margin-right: 15px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	
 	overflow: hidden;
 }
 .groupTitle{
@@ -65,7 +70,8 @@ body{
 	height: 200px;
 }
 .group-left{	
-	width: 400px;
+	/* border: 3px solid yellow; */
+	width: 20%;
 	height: 700px;
 	background-color: #637a94;
 	display: flex;
@@ -114,7 +120,7 @@ body{
 .group-background-img{
 	position: relative;	
 	margin-top: -10%;
-	width: 1000px;
+	width: 100%;
 }
 .post{
 	background-color: #f1f1f1 !important;
@@ -122,6 +128,11 @@ body{
 .group-in{
 	overflow-y: scroll;
 	height: 680px;
+	width: 100%;
+	border: 3px solid red;
+}
+.group-info{
+	border: 3px solid blue;
 }
 #group-description{
 	
@@ -172,7 +183,7 @@ body{
 	/*border: 1px solid red;*/
 	margin: auto;
 	width: 600px;
-
+	border: 3px solid green;
 }
 #new-post-text-group{
 	border: none;
@@ -185,7 +196,7 @@ body{
 	flex-direction: column;
 }
 .group-posts{
-	/*border: 1px solid black;*/
+	border: 3px solid black;
 }
 .postButton{
 	outline: none;
@@ -205,7 +216,7 @@ body{
 
 @media screen and (max-width: 770px) {
 	.group-cont{
-		border: 2px solid green;
+		/* border: 2px solid green; */
 		flex-direction: column;
 	}
 	#hamburger-group{
@@ -248,27 +259,41 @@ body{
 		color: white;
 	}
 	.group-right{
-		border: 2px solid red;
+		/* border: 2px solid red; */
 		width: 100%;
 	}
 	.group-list{
-		border: 2px solid yellow;
+		/* border: 2px solid yellow; */
 		width: 100%;
 		justify-content: space-between;
 	}
 }
 
+
+
 @media screen and (max-width: 686px) {
+	#group-back-img-div{
+		height: auto;
+	}
 	.group{
 		width: 250px;
+	}
+	.group-post-cont{
+		width: 100%;
+	}
+	.group-posts{
+		width: 100%;
 	}
 }
 @media screen and (max-width: 580px) {
 	.group{
 		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.group-list{
+
+		align-items: center;
 		
-		justify-content: center;
 	}
 }

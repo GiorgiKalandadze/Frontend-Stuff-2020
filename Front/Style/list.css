@@ -3,7 +3,8 @@ body{
 	padding: 0px;
 }
 .people-container {
-background-color: lightgrey;
+	width: 100%;
+	background-color: lightgrey;
 }
 .search-container{
 	padding-top: 10px;
@@ -24,23 +25,24 @@ background-color: lightgrey;
 .avatarList {
 	padding: 5px;
 	display:flex;
-	justify-content: space-around;
 	flex-wrap: wrap;
 }
 
 .info {
+
 	background-color: white;
 	width: 300px;
 	text-align: center;
 	margin: 10px;
-
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid blue;
 	cursor: pointer;
 }
 
 .listAvatar {
 	height: 200px;
 	width:100%;
-
 }
 
 .personName {
@@ -50,6 +52,7 @@ background-color: lightgrey;
 }
 
 .info:hover {
+	
 	transform: scale(1.05);
 }
 
@@ -64,12 +67,39 @@ background-color: lightgrey;
 
 .inp {
 	width: 100%;
-
+	
 	display: none;
 }
 
 
 
+@media screen and (max-width: 1000px) {
+	.info{
+		width: 250px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.info{
+	
+		width: 300px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.info{
+		width: 300px;
+	}
+}
+@media screen and (max-width: 610px) {
+	.info{
+		width: 250px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.info{
+		width: 300px;
+	}
+}
 
 @media screen and (max-width: 250px) {
 	.people-search{

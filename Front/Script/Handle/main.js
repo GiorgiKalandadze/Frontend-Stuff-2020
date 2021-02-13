@@ -10,8 +10,10 @@ document.addEventListener("click", function(e){
 		
 		var newPost = {"id":posts.length + 1, "author_id":loggedID, "date":"17 Feb",
 						"text":text};
+		console.log(loggedID);
 		posts.push(newPost);
 		document.getElementsByClassName("containerPost")[0].innerHTML = "";
+		document.getElementById("new-post-text").value = "";
 		loadPosts();
 		
 	}
@@ -19,9 +21,9 @@ document.addEventListener("click", function(e){
 
 function loadPosts(){
 	var currPost;
-	
-	for(i = posts.length - 1; i >= 0; i--){
+	for(i = posts.length - 1; i > 0; i--){
 		currPost = posts[i];
+	
 		//First Row
 		var divPost = document.createElement('div');
 		divPost.className = "post";
@@ -53,49 +55,10 @@ function loadPosts(){
  		var divPTR = document.createElement('div');
  		divPTR.className = "postThirdRow";
  		//Check Images
- 	// 	if(currPost.img.length > 0){
-		// 	for(j = 0; j < currPost.img.length; j++){
-		// 		var img = document.createElement('img');
-		// 		img.src = "../Images/Posts/" + currPost.img[j];
-		// 		img.className = "postImg";
-		// 		img.alt = currPost.img[0];
-		// 		divPTR.appendChild(img);
-		// 	}
-		// }
-		//Check Video
-
-
-
-		// var button1 = document.createElement('button');
-		// button1.className = "postButton";
-		// button1.id = "like-button";
-		// button1.setAttribute("checked", "false");
-		// var i1 = document.createElement('i');
-		// i1.className = "fas fa-thumbs-up";
-		// button1.appendChild(i1);
-		// var label1 = document.createElement('label');
-		// label1.className = "post-button-text";
-		// label1.id = "post-button-like";
-		// label1.innerHTML = "Like";
-		// button1.appendChild(label1);
-		// var button2 = document.createElement('button');
-		// button2.className = "postButton";
-		// var i2 = document.createElement('i');
-		// i2.className = "fas fa-bookmark";
-		// var label2 = document.createElement('label');
-		// label2.className = "post-button-text";
-		// label2.id = "post-button-save";
-		// label2.innerHTML = 'Save';
-		// button2.appendChild(i2);
-		// button2.appendChild(label2);
-
+ 	
 		divPost.appendChild(divPFR);
 		divPost.appendChild(divPSR);
 		divPost.appendChild(divPTR);
-
-		//divPost.appendChild(button1);
-		// divPost.appendChild(button2);
-		//console.log(document.getElementsByClassName('containerPost')[0]);
 		document.getElementsByClassName('containerPost')[0].appendChild(divPost);	
 	}
 }
@@ -109,6 +72,7 @@ function loadNews(){
 		var img = document.createElement("img");
 		img.className = "news-img";
 		img.src = "../Images/News/" + news[i].img;
+		img.alt = news[i].src;
 		var p = document.createElement("p");
 		p.className = "news-text";
 		p.innerHTML = news[i].text;

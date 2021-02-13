@@ -199,3 +199,52 @@ hr{
 
 
 
+
+
+@media screen and (max-width: 770px) {
+	#main-feed-left{
+		/* width: 100%; */
+		/* border: 2px solid green; */
+		height: auto;
+	}
+	#main-feed-right{
+		display: none;
+		padding: 2px;
+		/* border: 2px solid red; */
+	}
+	.main-feed-mid{
+		/* width: 100%; */
+		/* border: 2px solid blue; */
+	}
+	#new-post{
+		width: 100%;
+		/* border: 2px solid yellow; */
+	}
+	.containerPost{
+		width: 100%;
+		/* border: 2px solid black; */
+	}
+}
+
+@media screen and (max-width: 550px) {
+	#main-feed-left{
+		display: none;
+	}
+	#main-feed-right{
+		display: none;
+		padding: 2px;
+		border: 2px solid red;
+	}
+	.main-feed-mid{
+		width: 100%;
+		border: 2px solid blue;
+	}
+	#new-post{
+		width: 100%;
+		border: 2px solid yellow;
+	}
+	.containerPost{
+		width: 100%;
+		border: 2px solid black;
+	}
+}

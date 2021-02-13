@@ -1,29 +1,29 @@
 * {
 	box-sizing: border-box;
 }
-
 body{
 	margin: 0px;
 	background-color: #f1f1f1;
 	font-family: 'Raleway', sans-serif;
+	/* border: 3px solid red; */
 }
-.number{
-	font-family: 'sans-serif', sans-serif !important;
-}
-
 #main-cont{
+	width: 100%;
+	/* border:3px solid blueviolet; */
+	display: flex;
+	flex-direction: column;
 	padding: 5px;
+	align-items: center;
 }
 /*TOP */
 .top-row{
-	margin: auto;
-	margin-top: 30px;
-	margin-bottom: 90px;
-	padding: 10px;
+	padding: 5px;
+	/* border: 3px solid black; */
+	margin: 30px 0px 30px 0px; 
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	width: 1200px;
+	width: 95%;
 	background-color: #6c7a8b;
 	color: white;
 }
@@ -31,6 +31,10 @@ body{
 	display: flex;
 	flex-direction: column;
 	width: 400px;
+}
+.video{
+	/* border: 3px solid green; */
+	width: 50%;
 }
 .join{
 	border: none;
@@ -46,22 +50,6 @@ body{
 .join:hover{
 	opacity: 1;
 }
-
-
-#go-up{
-	width: 50px;
-	height: 50px;
-	position: fixed;
-	bottom: 5px;
-	right: 5px;
-	background-color: red;
-	border-radius: 5px;
-	outline: none;
-	text-decoration: none;
-	padding-left:12px;
-	padding-top: 12px;
-	color: white;
-}
 /*Mid */
 .mid-container{
 	margin: auto;
@@ -71,7 +59,7 @@ body{
 	font-size: 20px;
 	align-items: center;
 	justify-content: space-around;
-	width: 1200px;	
+	width: 95%;	
 	background-color:#6c7a8b;
 	color: white;
 }
@@ -86,13 +74,12 @@ body{
 	display: flex;
 	flex-direction: column;
 }
-
 /*Bot */
 .feature-container{
 	margin: auto;
 	margin-top: 80px;
 	padding: 10px;
-	width: 1200px;
+	width: 95%;
 	background-color:#6c7a8b;
 	color: white;
 	text-align: center;
@@ -119,58 +106,21 @@ body{
 	font-size: 50px;
 	color: #F7882F;
 }
-
-
-/*Foooter */
-.footerContainer{
-	background-color: #536272;
-}
-.footer-hr{
-	margin-left: 20px;
-	margin-right: 20px;
-}
-.footerFirstRow{
-	display: flex;
-	justify-content: space-around;
-}
-.footer-li{
-	cursor: pointer;
-
-}
-.footer-link{
-	text-decoration: none;
-	color: white;
-}
-.footerFirstRow, .footerSecondRow{
-	color:white;
-}
-.footerSecondRow{
-	display: flex;
-	justify-content: space-around;
-}
-
-.footerThirdRow{	
-	color:white;
-	text-align: center;
-}
-.footer-logo{
-	height: 100px;
-}
-
-
 #privacy-cont{
 	padding: 10px;
 }
+/*Responsive*/
+@media screen and (max-width: 770px) {
 
-
+}
 @media screen and (max-width: 770px) {
 	body{
-		border:1px solid red;
+		/* border:1px solid red; */
 		width: 100%;
 		padding: 5px;
 	}
 	#main-cont{
-		border:3px solid blue;
+		/* border:3px solid blue; */
 		width: 100%;
 	}
 
@@ -184,6 +134,7 @@ body{
 	}
 	.welcome{
 		width: 100%;
+		
 		/*border: 1px solid green;*/
 	}
 	.video{

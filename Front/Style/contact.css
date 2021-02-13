@@ -1,8 +1,18 @@
 
 #contact-cont{
+	width: 100%;
 	padding: 30px;	
 	display: flex;
 	justify-content: space-between;
+	/* border: 3px solid red; */
+}
+#contact-left{
+	
+	/* border: 3px solid blue; */
+}
+#contact-right{
+	width: 80%;
+	/* border: 3px solid green; */
 }
 .contact-row{
 	width: 300px;
@@ -59,7 +69,14 @@
 #message-sent{
 	display: none;
 }
-
+#map{
+	/* border: 3px solid yellow; */
+	
+	margin-left: 10px;
+}
+#google-map{
+	/* border: 3px solid brown; */
+}
 
 
 @media screen and (max-width: 770px) {

@@ -3,11 +3,13 @@ body{
 	padding: 0px;
 }
 .biggest{
+	width: 100%;
+	/* border: 3px solid coral; */
 	background-color: white;
 	padding: 10px;
 }
 #container {
-	height: 550px;
+	/* border: 3px solid blue; */
 	
 	background-color:  #637a94;
 	display: flex;
@@ -17,6 +19,7 @@ body{
 }
 
 #left-box {
+	/* border: 3px solid green; */
 	color: black;
 	background-color: #f1f1f1;
 	width: 24%;
@@ -27,15 +30,16 @@ body{
 	width: 100%;
 }
 #right-box{
+	/* border: 3px solid red; */
 	width: 75%;
 	display: flex;
   	flex-direction: column;
   	overflow: hidden;
   	overflow-y: scroll;
 }
-
 #info {
-	margin-left: 15px;
+	/* border: 3px solid red; */
+	padding-left: 15px;
 	margin-bottom:auto;
 }
 
@@ -108,34 +112,22 @@ hr{
 }
 
 
-.social-footer{
-	margin-top: 30px;
-	height: 100px;
-	display: flex;
-	flex-direction: column;
-	
-	width: 100%;
-	
-}
 .social:hover{
 	opacity: 0.6;
 	cursor: pointer;
 }
 .social-icons{
-
 	color: #637a94;
 	font-size: 20px;
 }
 .profile-hr{
 	color: #637a94;
-
 }
-
 .profile-left-buttons{
+	/* border: 3px solid pink; */
+	margin-top: 20px;
 	display: flex;
-	flex-direction: column;
-	
-	
+	flex-direction: column;	
 }
 #edit-profile{
 	border-bottom: 1px solid white;
@@ -163,22 +155,15 @@ hr{
 
 @media screen and (max-width: 770px) {	
 	#container{
-		
-		
 		flex-direction: column;
 		align-items: center;
 		height: auto;
 	}
 	#left-box{
-		
 		width: 100%;
-		
 		margin-bottom: 30px;
 	}	
 	#right-box{
-		
-		
 		width: 100%;
-		
 	}
 }

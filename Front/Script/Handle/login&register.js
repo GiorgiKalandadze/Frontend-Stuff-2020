@@ -25,27 +25,36 @@ document.addEventListener('click', function (e){
 	//Register
 	if(e.target.id == 'register-button'){
 		var exist = checkUserExist();
+		console.log('1');
 		if(exist){
+			console.log('2');
 			document.getElementById("register-alert").style.visibility = 'visible';
 		} else {
+			console.log('3');
 			var username = document.getElementById("username-input-reg").value;
 			var password = document.getElementById("password-input-reg").value;
 			var email = document.getElementById("email-input-reg").value;
 			if(username == "" || password == "" || email == ""){
+				console.log('4');
 				document.getElementById("register-alert").style.visibility = 'visible';
 				document.getElementById("register-alert").innerHTML = 'Please fill all fields';
 			} else {
+				console.log('5');
 				var newUserID = users.length + 1;
 				users.push({
 					"username": username, 
 					"password": password, "id":newUserID, 
 					"email": email, "status":status
 				});
+				console.log('6');
 				document.getElementById('login-button').innerHTML = document.getElementById("username-input-reg").value;
 				document.getElementById("register-alert").innerHTML = "";
 				document.getElementById("register-alert").style.visibility = "hidden";
 				document.getElementsByClassName('main-content')[0].innerHTML = mainHTML;
-
+				loadPosts();
+				loadNews();
+				logged = true;
+				console.log('7');
 			}
 		}
 	}

@@ -1,16 +1,13 @@
 document.addEventListener('click', function (e){
 	if(e.target.className == "trade-category-button"){
-		if(chosenCategoryId == 0){
-			chooseCategory(e.target.id);
-			document.getElementsByClassName('trade-right')[0].innerHTML = '';
-			loadCategoryItems(e.target.id);
-		} else {
-			clearCategory(e.target.id);
-			document.getElementsByClassName('trade-right')[0].innerHTML = '';
-			loadCategoryItems(1);
-		}
-		closeNav();
+		clearCategory(chosenCategoryId);
+		chooseCategory(e.target.id);
+		document.getElementsByClassName('trade-right')[0].innerHTML = '';
+		loadCategoryItems(e.target.id.substring(8));
+		closeNavTrade();
 	}
+	
+	
 	//e.preventDefault();
 	if(e.target.className == 'item-img'){
 		document.getElementsByClassName('trade-right')[0].innerHTML = itemInHTML;
@@ -18,16 +15,13 @@ document.addEventListener('click', function (e){
 	}
 	if(e.target.id == 'trade-in-back'){
 		document.getElementsByClassName('trade-right')[0].innerHTML = '';
-		if(chosenCategoryId == 0){
-			loadCategoryItems(1);
-		} else {
-			loadCategoryItems(chosenCategoryId);
-		}
+		loadCategoryItems(chosenCategoryId.substring(8));
+		
 	}
 	
 });
 
-var chosenCategoryId = 0;
+var chosenCategoryId = "category1";
 function clearCategory(id){
 	document.getElementById(id).style.backgroundColor = "white";
 	document.getElementById(id).style.color = "black";
@@ -71,6 +65,7 @@ function loadCategoryItems(index){
 		var img = document.createElement('img');
 
 		img.src = "../Images/Items/" + folder + "/" + item.img;
+		img.alt = item.name;
 		img.className = 'item-img';
 		img.id = item.id;
 		img.setAttribute("categoryId", index);
@@ -121,6 +116,7 @@ function loadItemIn(e){
 	var categoryArray = items[categoryId - 1];
 	var item = categoryArray[id];
 	document.getElementsByClassName('item-in-back-img')[0].src = "../Images/Items/" + categoryArray[0] + "/" + item.img;
+	document.getElementsByClassName('item-in-back-img')[0].alt = item.name; 
 	document.getElementById('item-in-name').innerHTML = item.name;
 	document.getElementById('item-in-price').innerHTML = item.price;
 	document.getElementById('item-in-description').innerHTML = item.description;
