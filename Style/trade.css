@@ -1,0 +1,274 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+.trade-cont {
+	width: 100%;
+	/* border: 3px solid fuchsia; */
+	margin-top: 10px;
+	display: flex;
+	justify-content: flex-start;
+	background-color: white;
+	height: 700px;
+}
+#hamburger-trade{
+	display: none;
+	border: none;
+	outline: none;
+	background-color: red;
+}
+.trade-left{	
+	/* border: 3px solid red; */
+	/*width: 200px;*/
+	width: 20%;
+	height: 100%;
+	margin-right: 40px;
+	background-color: #637a94;
+	display: flex;
+	flex-direction: column;
+	padding: 3px;
+	
+}
+.filter-box{
+	padding: 5px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+.filter-checkboxes{
+	list-style-type: none;
+	padding: 0px;
+}
+.trade-category-button{
+	background-color: white;
+	border: none;
+	/* color: red; */
+	outline: none;
+	cursor: pointer;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	padding: 10px;
+	margin: 5px;
+	margin-left: 0px;
+}
+#price-inp{
+	margin-bottom: 5px;
+}
+.price-border-label{
+	margin: 2px;
+	margin-left: 0px;
+}
+#set-trade-price{
+	margin: 5px;
+	margin-left: 0px;
+	background-color: #F7882F;
+	cursor: pointer;
+	border:none;
+	outline: none;
+	padding: 5px;
+	font-size: 15px;
+}
+.trade-hr{
+	margin: 0px;
+}
+
+.trade-right{
+	/*width: 1000px;*/
+	width:80%;
+	display: flex;
+	align-items: space-around;
+	flex-direction: column;
+	background-color:  #637a94;
+
+}
+.trade-list {
+	overflow-y: scroll;
+	height: 680px;
+	background-color:  #637a94;
+	width: 100%;
+	padding:10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	
+}
+.trade-item {
+	width: 300px;
+	height: 320px;
+	margin: 5px;
+	margin-bottom: 20px;
+	background-color: lightgrey;
+	margin-right: 15px;
+	overflow-y: hidden;
+}
+.item-title{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.item-type{
+	display: none;
+}
+.item-location{
+	display: none;
+}
+.item-description{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 5px;
+}
+
+.item-img{
+	cursor: pointer;
+	width: 100%;
+	height: 200px;
+}
+
+
+
+/*Item in */
+.item-in{
+	padding: 10px;
+	display: flex;
+}
+.item-in-right{
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.item-in-data{
+	display: flex;
+	flex-direction: column;
+}
+.item-in-back-img{
+	width: 400px;
+	height: auto;
+}
+.item-in-value{
+	display: 'none';
+	
+}
+.item-in-attribute{
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	margin-bottom: 5px;
+}
+.item-description{
+	
+	height: 90px;
+	overflow: hidden;
+}
+#trade-in-back {
+	margin-top: 5px;
+	outline: none;
+	text-decoration: none;
+	height : 30px;
+	width: 100px;
+	color: white;
+	border: none;
+	border-radius: 50px;
+	cursor:pointer;
+	text-transform: uppercase;
+	transition: all 0.3s ease 0s;
+	background-color: #F7882F;
+	opacity: 0.9;
+}
+.fas.fa-times{
+	color: white;
+}
+#trade-in-back:hover{
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 770px) {
+	.trade-cont{
+		
+		/* border: 3px solid yellow; */
+		flex-direction: column;
+	}
+
+	#hamburger-trade{
+		cursor: pointer;
+		color:white;
+		display: block;
+		width: 50%;
+		background-color: #536272;
+		align-self: center;
+		margin: 10px;
+	}
+	.trade-left{
+		display: inline;
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #536272;
+		overflow-x: hidden;
+		transition: 0.5s;
+		text-align: center;
+		font-size: 0.5rem;
+		padding: 5px;
+	}
+	#closebtnTrade{
+		display: block;
+		position: absolute;
+	  	top: 5px;
+	  	right: 15px;
+	  	font-size: 60px;
+		background-color: #536272;
+		border: none;
+		outline: none;
+		color: white;
+	}
+
+	.trade-right{
+		/* border: 3px solid red; */
+		width: 100%;
+	}
+	.trade-list{
+		/* border: 3px solid blue; */
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	.item-in{
+		align-items: center;
+		flex-direction: column;
+		overflow-y: scroll;
+
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.trade-item{
+		width: 35%;
+	}
+}
+@media screen and (max-width: 550px) {
+	.trade-item{
+		width: 300px;
+	}
+	.item-in-back-img{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	
+	.trade-item{
+		width: 100%;
+	}
+}
